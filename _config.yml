@@ -31,8 +31,6 @@ launch_buttons:
   thebe: false
 
 sphinx:
-  extra_extensions:
-    - sphinx_proof
   config:
     language: es
     html_theme_options:
