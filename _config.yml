@@ -1,0 +1,39 @@
+title: "IA + AEC"
+author: Bryan S. Cruz
+logo: ""
+copyright: "2026"
+
+execute:
+  execute_notebooks: "off"
+
+parse:
+  myst_enable_extensions:
+    - colon_fence
+    - dollarmath
+    - linkify
+    - substitution
+
+html:
+  use_issues_button: true
+  use_repository_button: true
+  use_edit_page_button: true
+  home_page_in_navbar: true
+  favicon: ""
+
+repository:
+  url: https://github.com/byama/Bryansycruz
+  branch: main
+  path_to_book: ""
+
+launch_buttons:
+  colab_url: "https://colab.research.google.com"
+  binderhub_url: ""
+  thebe: false
+
+sphinx:
+  extra_extensions:
+    - sphinx_proof
+  config:
+    language: es
+    html_theme_options:
+      navigation_with_keys: true

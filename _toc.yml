@@ -1,0 +1,23 @@
+format: jb-book
+root: intro
+parts:
+  - caption: "Fundamentos de IA"
+    chapters:
+      - file: fundamentos/01_que_es_ia
+      - file: fundamentos/02_tipos_aprendizaje
+      - file: fundamentos/03_redes_neuronales
+      - file: fundamentos/04_llms_y_genai
+
+  - caption: "Agentes de IA"
+    chapters:
+      - file: agentes/01_intro_agentes
+      - file: agentes/02_agente_basico
+
+  - caption: "Práctica"
+    chapters:
+      - file: practica/01_setup
+      - file: practica/02_primer_modelo
+
+  - caption: "Legal"
+    chapters:
+      - file: aviso_legal
