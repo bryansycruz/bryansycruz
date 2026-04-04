@@ -32,10 +32,9 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Build the book
-        run: jupyter-book build .
-
-      - name: Add .nojekyll
-        run: touch _build/html/.nojekyll
+        run: |
+          jupyter-book build . --verbose
+          touch _build/html/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
