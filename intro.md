@@ -60,22 +60,109 @@
 
 ---
 
-## ¿Qué encontrarás aquí?
+## Mapa del curso
 
-**Fundamentos**
-: IA y Machine Learning explicados para el ecosistema de la construcción.
+```{raw} html
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; margin: 2rem 0;">
 
-**Cloud**
-: Cómo utilizar servicios Cloud y despliegue de aplicaciones en Amazon Web Services (AWS) y Google Cloud Platform (GCP).
+  <!-- Módulo 1 -->
+  <a href="ml/01_que_es_ml.html" style="text-decoration: none; color: inherit;">
+    <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.4rem 1.6rem;
+                opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
+         onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
+         onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
+      <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤖</div>
+      <div style="font-size: 0.7rem; opacity: 0.5; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Módulo 1</div>
+      <div style="font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem;">Machine Learning</div>
+      <div style="font-size: 0.85rem; opacity: 0.7; line-height: 1.5;">
+        Qué es ML, tipos de aprendizaje, overfitting, pipeline completo y librerías esenciales.
+      </div>
+    </div>
+  </a>
 
-**Práctica**
-: Notebooks interactivos y recursos abiertos para la comunidad académica.
+  <!-- Módulo 2 -->
+  <a href="deep_learning/01_intro_dl.html" style="text-decoration: none; color: inherit;">
+    <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.4rem 1.6rem;
+                opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
+         onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
+         onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
+      <div style="font-size: 2rem; margin-bottom: 0.5rem;">🧠</div>
+      <div style="font-size: 0.7rem; opacity: 0.5; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Módulo 2</div>
+      <div style="font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem;">Deep Learning</div>
+      <div style="font-size: 0.85rem; opacity: 0.7; line-height: 1.5;">
+        Redes neuronales, CNNs para detección de defectos y Transfer Learning.
+      </div>
+    </div>
+  </a>
+
+  <!-- Módulo 3 -->
+  <a href="genai/01_intro_genai.html" style="text-decoration: none; color: inherit;">
+    <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.4rem 1.6rem;
+                opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
+         onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
+         onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
+      <div style="font-size: 2rem; margin-bottom: 0.5rem;">✨</div>
+      <div style="font-size: 0.7rem; opacity: 0.5; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Módulo 3</div>
+      <div style="font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem;">IA Generativa</div>
+      <div style="font-size: 0.85rem; opacity: 0.7; line-height: 1.5;">
+        Modelos generativos, Diffusion, GANs y generación de texto, código e imágenes.
+      </div>
+    </div>
+  </a>
+
+  <!-- Módulo 4 -->
+  <a href="llms/01_que_son_llms.html" style="text-decoration: none; color: inherit;">
+    <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.4rem 1.6rem;
+                opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
+         onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
+         onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
+      <div style="font-size: 2rem; margin-bottom: 0.5rem;">💬</div>
+      <div style="font-size: 0.7rem; opacity: 0.5; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Módulo 4</div>
+      <div style="font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem;">LLMs</div>
+      <div style="font-size: 0.85rem; opacity: 0.7; line-height: 1.5;">
+        Qué son los Large Language Models, cómo usarlos vía API y prompting efectivo.
+      </div>
+    </div>
+  </a>
+
+  <!-- Módulo 5 -->
+  <a href="agentes/01_intro_agentes.html" style="text-decoration: none; color: inherit;">
+    <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.4rem 1.6rem;
+                opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
+         onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
+         onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
+      <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚙️</div>
+      <div style="font-size: 0.7rem; opacity: 0.5; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Módulo 5</div>
+      <div style="font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem;">Agentes de IA</div>
+      <div style="font-size: 0.85rem; opacity: 0.7; line-height: 1.5;">
+        Arquitectura ReAct, herramientas, frameworks como LangChain y CrewAI.
+      </div>
+    </div>
+  </a>
+
+  <!-- Módulo 6 -->
+  <a href="rag/01_que_es_rag.html" style="text-decoration: none; color: inherit;">
+    <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.4rem 1.6rem;
+                opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
+         onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
+         onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
+      <div style="font-size: 2rem; margin-bottom: 0.5rem;">📚</div>
+      <div style="font-size: 0.7rem; opacity: 0.5; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Módulo 6</div>
+      <div style="font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem;">RAG</div>
+      <div style="font-size: 0.85rem; opacity: 0.7; line-height: 1.5;">
+        Retrieval-Augmented Generation: consulta inteligente de tus propios documentos.
+      </div>
+    </div>
+  </a>
+
+</div>
+```
 
 ---
 
 ## ¿Cómo usar este recurso?
 
-1. **Lee** los capítulos en orden o navega por tema.
+1. **Lee** los módulos en orden o navega por el tema que necesites.
 2. **Clona** el repositorio para ejecutar los notebooks en tu máquina:
 
    ```bash

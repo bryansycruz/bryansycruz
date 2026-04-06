@@ -1,23 +1,38 @@
 format: jb-book
 root: intro
 parts:
-  - caption: "Fundamentos de IA"
+  - caption: "🤖 Módulo 1 · Machine Learning"
     chapters:
-      - file: fundamentos/01_que_es_ia
-      - file: fundamentos/02_tipos_aprendizaje
-      - file: fundamentos/03_redes_neuronales
-      - file: fundamentos/04_llms_y_genai
+      - file: ml/01_que_es_ml
+      - file: ml/02_tipos_ml
+      - file: ml/03_pipeline_ml
+      - file: ml/04_librerias
 
-  - caption: "Agentes de IA"
+  - caption: "🧠 Módulo 2 · Deep Learning"
+    chapters:
+      - file: deep_learning/01_intro_dl
+      - file: deep_learning/02_transfer_learning
+
+  - caption: "✨ Módulo 3 · IA Generativa"
+    chapters:
+      - file: genai/01_intro_genai
+      - file: genai/02_prompting
+
+  - caption: "💬 Módulo 4 · LLMs"
+    chapters:
+      - file: llms/01_que_son_llms
+      - file: llms/02_apis_llms
+
+  - caption: "⚙️ Módulo 5 · Agentes de IA"
     chapters:
       - file: agentes/01_intro_agentes
       - file: agentes/02_agente_basico
 
-  - caption: "Práctica"
+  - caption: "📚 Módulo 6 · RAG"
     chapters:
-      - file: practica/01_setup
-      - file: practica/02_primer_modelo
+      - file: rag/01_que_es_rag
+      - file: rag/02_rag_construccion
 
-  - caption: "Legal"
+  - caption: "⚖️ Legal"
     chapters:
       - file: aviso_legal
