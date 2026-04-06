@@ -32,9 +32,18 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Build the book
+        run: jupyter-book build . --verbose
+
+      - name: Verify build output
         run: |
-          jupyter-book build . --verbose
-          touch _build/html/.nojekyll
+          echo "=== Contenido de _build/ ==="
+          ls -la _build/ || echo "ERROR: _build/ no existe"
+          echo "=== Contenido de _build/html/ ==="
+          ls -la _build/html/ || echo "ERROR: _build/html/ no existe"
+          test -f _build/html/index.html || (echo "ERROR: index.html no encontrado" && exit 1)
+
+      - name: Add .nojekyll
+        run: touch _build/html/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
