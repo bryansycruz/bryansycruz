@@ -7,12 +7,10 @@
       digitalización del sector AEC mediante Inteligencia Artificial, ML y servicios Cloud
       (GCP · AWS).
     </p>
-    <div style="display:flex; gap:0.6rem; flex-wrap:wrap; align-items:center;">
-      <a href="https://github.com/bryansycruz" target="_blank"
-         style="display:inline-flex; align-items:center; gap:0.35rem; padding:0.35rem 0.8rem;
-                background:#24292e; color:#fff; border-radius:6px; text-decoration:none;
-                font-size:0.85rem; font-weight:500;">
-        <svg height="16" viewBox="0 0 16 16" width="16" fill="white"
+    <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center; margin-top:1rem;">
+      <a href="https://github.com/bryansycruz" target="_blank" title="GitHub"
+         style="display:inline-flex; opacity:0.7; transition:opacity 0.2s;">
+        <svg height="24" viewBox="0 0 16 16" width="24" fill="currentColor"
              xmlns="http://www.w3.org/2000/svg">
           <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
                    0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
@@ -24,13 +22,10 @@
                    2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01
                    1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
         </svg>
-        GitHub
       </a>
-      <a href="https://www.linkedin.com/in/bryanyamacruz/?locale=es" target="_blank"
-         style="display:inline-flex; align-items:center; gap:0.35rem; padding:0.35rem 0.8rem;
-                background:#0077b5; color:#fff; border-radius:6px; text-decoration:none;
-                font-size:0.85rem; font-weight:500;">
-        <svg height="16" viewBox="0 0 24 24" width="16" fill="white"
+      <a href="https://www.linkedin.com/in/bryanyamacruz/?locale=es" target="_blank" title="LinkedIn"
+         style="display:inline-flex; opacity:0.7; transition:opacity 0.2s;">
+        <svg height="24" viewBox="0 0 24 24" width="24" fill="currentColor"
              xmlns="http://www.w3.org/2000/svg">
           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037
                    -1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046
@@ -42,18 +37,14 @@
                    1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774
                    23.2 0 22.222 0h.003z"/>
         </svg>
-        LinkedIn
       </a>
-      <a href="mailto:Byama@unal.edu.co"
-         style="display:inline-flex; align-items:center; gap:0.35rem; padding:0.35rem 0.8rem;
-                background:#c0392b; color:#fff; border-radius:6px; text-decoration:none;
-                font-size:0.85rem; font-weight:500;">
-        <svg height="16" viewBox="0 0 24 24" width="16" fill="white"
+      <a href="mailto:Byama@unal.edu.co" title="Correo electrónico"
+         style="display:inline-flex; opacity:0.7; transition:opacity 0.2s;">
+        <svg height="24" viewBox="0 0 24 24" width="24" fill="currentColor"
              xmlns="http://www.w3.org/2000/svg">
           <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9
                    2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
         </svg>
-        Byama@unal.edu.co
       </a>
     </div>
   </div>
