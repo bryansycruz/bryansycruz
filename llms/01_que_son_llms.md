@@ -1,4 +1,4 @@
-# 💬 ¿Qué son los LLMs?
+# ¿Qué son los LLMs?
 
 ```{admonition} Definición rápida
 :class: tip
@@ -12,16 +12,16 @@
 Un LLM predice la siguiente palabra más probable dado un contexto:
 
 ```
-Entrada:  "El edificio tiene [___] pisos"
+Entrada: "El edificio tiene [___] pisos"
 
 1. Tokenización:
-   ["El", "edificio", "tiene", "[___]", "pisos"]
+ ["El", "edificio", "tiene", "[___]", "pisos"]
 
 2. Atención (self-attention):
-   "edificio" presta atención a: "tiene" (alta), "pisos" (alta)
+ "edificio" presta atención a: "tiene" (alta), "pisos" (alta)
 
 3. Predicción:
-   {"diez": 35%, "cinco": 28%, "veinte": 15%, ...}
+ {"diez": 35%, "cinco": 28%, "veinte": 15%, ...}
 
 Salida: "El edificio tiene diez pisos"
 ```
@@ -31,13 +31,13 @@ Salida: "El edificio tiene diez pisos"
 ## Evolución histórica
 
 ```
-2017 → Transformers inventados (Google)
-2018 → BERT — 340M parámetros
-2020 → GPT-3 — 175B parámetros ← ¡Revolución!
-2022 → ChatGPT lanzado ← Adopción masiva
-2023 → GPT-4, Claude 3, Llama 3
-2024 → Claude 3.5, GPT-4 Turbo, Llama 3.3 70B
-2025 → Claude Sonnet 4.6, modelos multimodales avanzados
+2017 Transformers inventados (Google)
+2018 BERT — 340M parámetros
+2020 GPT-3 — 175B parámetros ¡Revolución!
+2022 ChatGPT lanzado Adopción masiva
+2023 GPT-4, Claude 3, Llama 3
+2024 Claude 3.5, GPT-4 Turbo, Llama 3.3 70B
+2025 Claude Sonnet 4.6, modelos multimodales avanzados
 ```
 
 ---
@@ -76,9 +76,9 @@ Extrae:
 4. Recomendación técnica"""
 
 respuesta = client.messages.create(
-    model="claude-sonnet-4-6",
-    max_tokens=1000,
-    messages=[{"role": "user", "content": prompt}]
+ model="claude-sonnet-4-6",
+ max_tokens=1000,
+ messages=[{"role": "user", "content": prompt}]
 )
 
 print(respuesta.content[0].text)
@@ -87,22 +87,22 @@ print(respuesta.content[0].text)
 **Salida generada:**
 ```
 1. PROBLEMA: Segregación de concreto en 3 columnas del nivel 5.
-   Indica deficiencia en colocación o vibrado. Afecta integridad estructural.
+ Indica deficiencia en colocación o vibrado. Afecta integridad estructural.
 
 2. PROPUESTA DEL CONTRATISTA:
-   Reparación con resina epoxi en lugar de demolición.
-   Objetivo: ahorrar 2 semanas de cronograma.
+ Reparación con resina epoxi en lugar de demolición.
+ Objetivo: ahorrar 2 semanas de cronograma.
 
 3. RIESGO:
-   - Reparación superficial no resuelve segregación interna.
-   - Compromete capacidad estructural a largo plazo.
-   - Responsabilidad legal si falla en el futuro.
-   - Incumple NSR-10 para elementos críticos.
+ - Reparación superficial no resuelve segregación interna.
+ - Compromete capacidad estructural a largo plazo.
+ - Responsabilidad legal si falla en el futuro.
+ - Incumple NSR-10 para elementos críticos.
 
 4. RECOMENDACIÓN:
-   RECHAZAR la propuesta. Exigir ensayos no destructivos
-   (esclerometría + ultrasonido). Si resistencia < 80% f'c
-   → DEMOLER y REFUNDIR. Documentar con sustento técnico.
+ RECHAZAR la propuesta. Exigir ensayos no destructivos
+ (esclerometría + ultrasonido). Si resistencia < 80% f'c
+  DEMOLER y REFUNDIR. Documentar con sustento técnico.
 ```
 
 ### Razonamiento financiero multi-paso
@@ -145,11 +145,11 @@ o información personal a APIs públicas sin revisar los términos de servicio.
 
 ---
 
-```{admonition} 📚 Libros recomendados
+```{admonition} Libros recomendados
 :class: seealso
 - **Generative Deep Learning** — capítulos 8-9 (Transformers, GPT)
 - [Anthropic Documentation](https://docs.anthropic.com/)
 - [Prompt Engineering Guide](https://www.promptingguide.ai/) — gratis en línea
 ```
 
-**Siguiente:** [Uso de APIs de LLMs →](02_apis_llms.md)
+**Siguiente:** [Uso de APIs de LLMs ](02_apis_llms.md)

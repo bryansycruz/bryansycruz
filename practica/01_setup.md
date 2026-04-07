@@ -2,7 +2,7 @@
 
 ## Opción 1: Google Colab (recomendado para empezar)
 
-No necesitas instalar nada. Solo abre los notebooks directamente desde el botón 🚀 en cada página.
+No necesitas instalar nada. Solo abre los notebooks directamente desde el botón en cada página.
 
 ## Opción 2: Entorno local
 
@@ -62,9 +62,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn import __version__ as sk_version
 
-print(f"NumPy:        {np.__version__}")
-print(f"Pandas:       {pd.__version__}")
-print(f"Matplotlib:   {plt.matplotlib.__version__}")
+print(f"NumPy: {np.__version__}")
+print(f"Pandas: {pd.__version__}")
+print(f"Matplotlib: {plt.matplotlib.__version__}")
 print(f"Scikit-learn: {sk_version}")
-print("\n¡Todo listo! ✓")
+print("\n¡Todo listo!")
 ```

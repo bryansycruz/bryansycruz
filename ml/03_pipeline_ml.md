@@ -2,7 +2,7 @@
 
 Construir un modelo de ML no es solo "usar un algoritmo". Es un **proceso de 6 pasos** que va desde el problema hasta la solución en producción.
 
-```{admonition} 🏗️ Analogía: Construir un modelo de ML es como construir un edificio
+```{admonition} Analogía: Construir un modelo de ML es como construir un edificio
 :class: note
 1. **Recolectar datos** = Estudios de suelo (sin datos buenos, el edificio colapsa)
 2. **Preprocesar** = Limpiar el terreno (quitar escombros, nivelar)
@@ -50,10 +50,10 @@ df = client.query("SELECT * FROM proyectos.edificio_cumbre").to_dataframe()
 
 **Problemas comunes en datos de construcción:**
 
-- ❌ Valores faltantes (`$2,500` vs `2500` vs `$2.5K`)
-- ❌ Duplicados (mismo proveedor con nombres diferentes)
-- ❌ Errores de digitación (`cemento` vs `cemneto`)
-- ❌ Escalas diferentes (metros vs pies, pesos vs dólares)
+- Valores faltantes (`$2,500` vs `2500` vs `$2.5K`)
+- Duplicados (mismo proveedor con nombres diferentes)
+- Errores de digitación (`cemento` vs `cemneto`)
+- Escalas diferentes (metros vs pies, pesos vs dólares)
 
 ```python
 import pandas as pd
@@ -104,9 +104,9 @@ plt.show()
 ```
 
 **Hallazgos típicos en construcción:**
-- `"El área explica el 85% de la variación del costo"` → variable importante
-- `"Proyectos en Zona X cuestan 30% más"` → crear variable zona_premium
-- `"5 proyectos tienen costo negativo"` → error de digitación, corregir
+- `"El área explica el 85% de la variación del costo"` variable importante
+- `"Proyectos en Zona X cuestan 30% más"` crear variable zona_premium
+- `"5 proyectos tienen costo negativo"` error de digitación, corregir
 
 ---
 
@@ -122,7 +122,7 @@ y = df["costo_total"]
 
 # Dividir: 80% entrenamiento, 20% prueba
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
+ X, y, test_size=0.2, random_state=42
 )
 
 # Crear y entrenar el modelo
@@ -147,7 +147,7 @@ modelo.fit(X_train, y_train)
 ```{warning}
 Un modelo que funciona perfecto en entrenamiento pero mal en datos nuevos tiene **sobreajuste (overfitting)**. Es como memorizar un examen sin entender el tema.
 
-Señal de alerta: precisión entrenamiento 98%, precisión prueba 65% → diferencia > 20% = problema.
+Señal de alerta: precisión entrenamiento 98%, precisión prueba 65% diferencia > 20% = problema.
 ```
 
 ```python
@@ -163,8 +163,8 @@ print(f"Error promedio: ${mae:,.0f} COP")
 # R² — qué porcentaje de variación explica el modelo
 r2 = r2_score(y_test, y_pred)
 print(f"R²: {r2:.2f} ({r2*100:.1f}% de varianza explicada)")
-# R² = 0.85 → muy bueno
-# R² < 0.50 → modelo pobre, necesita mejoras
+# R² = 0.85 muy bueno
+# R² < 0.50 modelo pobre, necesita mejoras
 ```
 
 ---
@@ -180,7 +180,7 @@ joblib.dump(modelo, "modelo_costos_v1.pkl")
 # Cargar y usar después
 modelo_cargado = joblib.load("modelo_costos_v1.pkl")
 
-nuevo_proyecto = [[1200, 5, 1, 1]]  # área, pisos, zona, tipo
+nuevo_proyecto = [[1200, 5, 1, 1]] # área, pisos, zona, tipo
 prediccion = modelo_cargado.predict(nuevo_proyecto)
 print(f"Costo estimado: ${prediccion[0]:,.0f} COP")
 ```
@@ -196,4 +196,4 @@ print(f"Costo estimado: ${prediccion[0]:,.0f} COP")
 
 ---
 
-**Siguiente:** [Librerías esenciales →](04_librerias.md)
+**Siguiente:** [Librerías esenciales ](04_librerias.md)

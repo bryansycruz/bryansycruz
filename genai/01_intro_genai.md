@@ -1,9 +1,9 @@
-# ✨ IA Generativa
+# IA Generativa
 
 ```{admonition} ¿Qué diferencia a la IA Generativa del ML tradicional?
 :class: tip
-- **ML tradicional:** Analiza y predice → *"¿Hay una grieta?"*
-- **IA Generativa:** Crea contenido nuevo → *"Genera un render del edificio"*
+- **ML tradicional:** Analiza y predice *"¿Hay una grieta?"*
+- **IA Generativa:** Crea contenido nuevo *"Genera un render del edificio"*
 ```
 
 ## Definición
@@ -27,7 +27,7 @@
 
 ## Analogía para arquitectos
 
-```{admonition} 🏗️ GenAI es como un pasante ultra-capacitado
+```{admonition} GenAI es como un pasante ultra-capacitado
 :class: note
 Le dices: *"Necesito un edificio residencial de 8 pisos, moderno, para clima cálido, presupuesto medio."*
 
@@ -48,9 +48,9 @@ Inventado por Google en 2017. El componente clave es el **mecanismo de atención
 Frase: "El edificio es muy [___]"
 
 Atención analiza:
-- "edificio" → relacionado con: alto, moderno, grande
-- "muy"      → indica intensificador
-- Contexto   → construcción
+- "edificio" relacionado con: alto, moderno, grande
+- "muy" indica intensificador
+- Contexto construcción
 
 Predicción: "alto" (65%), "grande" (20%), "moderno" (10%)
 ```
@@ -60,13 +60,13 @@ Predicción: "alto" (65%), "grande" (20%), "moderno" (10%)
 Dos redes compitiendo entre sí:
 
 ```
-Generador:      "Aquí está un render de edificio"
-Discriminador:  "Es falso, las sombras no corresponden"
-Generador:      "Ok, corrijo las sombras..."
-Discriminador:  "Ahora las sombras no coinciden con el sol"
+Generador: "Aquí está un render de edificio"
+Discriminador: "Es falso, las sombras no corresponden"
+Generador: "Ok, corrijo las sombras..."
+Discriminador: "Ahora las sombras no coinciden con el sol"
 ...
 (1.000.000 iteraciones después)
-Discriminador:  "No puedo distinguirlo de un render real" ✓
+Discriminador: "No puedo distinguirlo de un render real"
 ```
 
 ### 3. Modelos de Difusión — Los más potentes hoy
@@ -75,10 +75,10 @@ Aprenden a "limpiar" imágenes del ruido hacia contenido:
 
 ```
 Entrenamiento:
-Imagen real → + ruido → + más ruido → ... → ruido puro
+Imagen real + ruido + más ruido ... ruido puro
 
 Generación:
-Ruido puro  → - ruido → - más ruido → ... → imagen nueva
+Ruido puro - ruido - más ruido ... imagen nueva
 ```
 
 ---
@@ -97,9 +97,9 @@ edificio de 8 pisos en zona sísmica:
 - Normativa: NSR-10 Colombia"""
 
 mensaje = client.messages.create(
-    model="claude-sonnet-4-6",
-    max_tokens=2000,
-    messages=[{"role": "user", "content": prompt}]
+ model="claude-sonnet-4-6",
+ max_tokens=2000,
+ messages=[{"role": "user", "content": prompt}]
 )
 
 print(mensaje.content[0].text)
@@ -110,18 +110,18 @@ print(mensaje.content[0].text)
 ESPECIFICACIONES TÉCNICAS - SISTEMA DE FUNDACIÓN
 
 1. ALCANCE
-   Sistema de fundación profunda mediante pilotes para edificio de 8 pisos...
+ Sistema de fundación profunda mediante pilotes para edificio de 8 pisos...
 
 2. DISEÑO ESTRUCTURAL
-   - Tipo: Pilotes perforados de concreto reforzado
-   - Diámetro: 0.80 m  |  Profundidad: 18-22 m
-   - Capacidad portante: 180 ton/pilote
-   - f'c: 28 MPa (4000 PSI)
-   - Acero: 12 varillas #8 + espirales #4 @ 15 cm
+ - Tipo: Pilotes perforados de concreto reforzado
+ - Diámetro: 0.80 m | Profundidad: 18-22 m
+ - Capacidad portante: 180 ton/pilote
+ - f'c: 28 MPa (4000 PSI)
+ - Acero: 12 varillas #8 + espirales #4 @ 15 cm
 
 3. CONSIDERACIONES SÍSMICAS (NSR-10)
-   - Zona: Alta amenaza sísmica  |  Coeficiente Aa: 0.25
-   ...
+ - Zona: Alta amenaza sísmica | Coeficiente Aa: 0.25
+ ...
 ```
 
 ---
@@ -130,12 +130,12 @@ ESPECIFICACIONES TÉCNICAS - SISTEMA DE FUNDACIÓN
 
 La diferencia entre una respuesta genérica y una respuesta técnica precisa está en cómo formulas la pregunta.
 
-❌ **Malo:**
+**Malo:**
 ```
 "Explica las fundaciones"
 ```
 
-✅ **Bueno:**
+**Bueno:**
 ```
 "Actúa como ingeniero civil especialista en fundaciones.
 
@@ -156,17 +156,17 @@ Audiencia: director de obra sin formación en estructuras."
 | Técnica | Descripción | Ejemplo |
 |---------|-------------|---------|
 | **Role prompting** | Define el rol del modelo | *"Actúa como ingeniero estructural"* |
-| **Few-shot** | Da ejemplos de entrada-salida | *"Entrada: X → Salida: Y. Ahora para Z..."* |
+| **Few-shot** | Da ejemplos de entrada-salida | *"Entrada: X Salida: Y. Ahora para Z..."* |
 | **Chain-of-thought** | Pide razonamiento paso a paso | *"Explica paso a paso tu razonamiento"* |
 | **Formato específico** | Pide tabla, JSON, lista | *"Responde en tabla comparativa"* |
 | **Constraints** | Limita longitud o nivel | *"Máximo 200 palabras, nivel técnico medio"* |
 
 ---
 
-```{admonition} 📚 Libros recomendados
+```{admonition} Libros recomendados
 :class: seealso
 - **Generative Deep Learning** (David Foster) — libro completo
 - **Hands-on Machine Learning** — capítulos 15-17
 ```
 
-**Siguiente:** [Prompting avanzado →](02_prompting.md)
+**Siguiente:** [Prompting avanzado ](02_prompting.md)

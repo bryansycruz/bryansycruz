@@ -13,12 +13,12 @@ client = anthropic.Anthropic(api_key="tu_api_key_aqui")
 
 # Consulta básica
 respuesta = client.messages.create(
-    model="claude-sonnet-4-6",
-    max_tokens=1000,
-    messages=[
-        {"role": "user",
-         "content": "¿Cuál es la diferencia entre concreto armado y pretensado?"}
-    ]
+ model="claude-sonnet-4-6",
+ max_tokens=1000,
+ messages=[
+ {"role": "user",
+ "content": "¿Cuál es la diferencia entre concreto armado y pretensado?"}
+ ]
 )
 
 print(respuesta.content[0].text)
@@ -30,17 +30,17 @@ print(respuesta.content[0].text)
 conversacion = []
 
 def preguntar(pregunta):
-    conversacion.append({"role": "user", "content": pregunta})
+ conversacion.append({"role": "user", "content": pregunta})
 
-    respuesta = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=2000,
-        messages=conversacion
-    )
+ respuesta = client.messages.create(
+ model="claude-sonnet-4-6",
+ max_tokens=2000,
+ messages=conversacion
+ )
 
-    texto = respuesta.content[0].text
-    conversacion.append({"role": "assistant", "content": texto})
-    return texto
+ texto = respuesta.content[0].text
+ conversacion.append({"role": "assistant", "content": texto})
+ return texto
 
 # Claude recuerda todo el contexto anterior
 r1 = preguntar("¿Qué es el momento flector?")
@@ -55,21 +55,21 @@ r3 = preguntar("Dame un ejemplo numérico: viga de 6m, carga 5 kN/m")
 ```python
 from groq import Groq
 
-client = Groq(api_key="tu_api_key_groq")  # cuenta gratis en groq.com
+client = Groq(api_key="tu_api_key_groq") # cuenta gratis en groq.com
 
 respuesta = client.chat.completions.create(
-    model="llama-3.3-70b-versatile",
-    messages=[
-        {"role": "user",
-         "content": "Resume esta acta de comité: [pega el texto aquí]"}
-    ],
-    max_tokens=1000
+ model="llama-3.3-70b-versatile",
+ messages=[
+ {"role": "user",
+ "content": "Resume esta acta de comité: [pega el texto aquí]"}
+ ],
+ max_tokens=1000
 )
 
 print(respuesta.choices[0].message.content)
 ```
 
-```{admonition} 💡 ¿Por qué Groq para empezar?
+```{admonition} ¿Por qué Groq para empezar?
 :class: tip
 - Capa gratuita generosa (millones de tokens por día)
 - Velocidad extremadamente rápida
@@ -87,14 +87,14 @@ from openai import OpenAI
 client = OpenAI(api_key="tu_api_key")
 
 respuesta = client.chat.completions.create(
-    model="gpt-4-turbo",
-    messages=[
-        {"role": "system",
-         "content": "Eres un ingeniero civil experto en estructuras."},
-        {"role": "user",
-         "content": "Explica el diseño de una losa aligerada"}
-    ],
-    max_tokens=1500
+ model="gpt-4-turbo",
+ messages=[
+ {"role": "system",
+ "content": "Eres un ingeniero civil experto en estructuras."},
+ {"role": "user",
+ "content": "Explica el diseño de una losa aligerada"}
+ ],
+ max_tokens=1500
 )
 
 print(respuesta.choices[0].message.content)
@@ -109,15 +109,15 @@ import anthropic
 import PyPDF2
 
 def analizar_especificacion(pdf_path):
-    # 1. Leer PDF
-    with open(pdf_path, "rb") as f:
-        reader = PyPDF2.PdfReader(f)
-        texto = "".join(page.extract_text() for page in reader.pages)
+ # 1. Leer PDF
+ with open(pdf_path, "rb") as f:
+ reader = PyPDF2.PdfReader(f)
+ texto = "".join(page.extract_text() for page in reader.pages)
 
-    # 2. Analizar con Claude
-    client = anthropic.Anthropic(api_key="tu_api_key")
+ # 2. Analizar con Claude
+ client = anthropic.Anthropic(api_key="tu_api_key")
 
-    prompt = f"""Analiza esta especificación técnica y extrae:
+ prompt = f"""Analiza esta especificación técnica y extrae:
 
 1. Alcance del trabajo
 2. Materiales especificados (marca, norma, características)
@@ -129,13 +129,13 @@ def analizar_especificacion(pdf_path):
 Especificación:
 {texto}"""
 
-    respuesta = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=4000,
-        messages=[{"role": "user", "content": prompt}]
-    )
+ respuesta = client.messages.create(
+ model="claude-sonnet-4-6",
+ max_tokens=4000,
+ messages=[{"role": "user", "content": prompt}]
+ )
 
-    return respuesta.content[0].text
+ return respuesta.content[0].text
 
 # Usar
 analisis = analizar_especificacion("especificacion_concreto.pdf")
@@ -151,13 +151,13 @@ import anthropic
 from docx import Document
 
 class GeneradorEspecificaciones:
-    def __init__(self, api_key):
-        self.client = anthropic.Anthropic(api_key=api_key)
+ def __init__(self, api_key):
+ self.client = anthropic.Anthropic(api_key=api_key)
 
-    def generar(self, tipo_elemento, parametros):
-        params_texto = "\n".join(f"- {k}: {v}" for k, v in parametros.items())
+ def generar(self, tipo_elemento, parametros):
+ params_texto = "\n".join(f"- {k}: {v}" for k, v in parametros.items())
 
-        prompt = f"""Genera una especificación técnica detallada para:
+ prompt = f"""Genera una especificación técnica detallada para:
 
 Elemento: {tipo_elemento}
 Parámetros:
@@ -173,29 +173,29 @@ Incluye:
 
 Formato: profesional y conciso."""
 
-        respuesta = self.client.messages.create(
-            model="claude-sonnet-4-6",
-            max_tokens=3000,
-            messages=[{"role": "user", "content": prompt}]
-        )
-        return respuesta.content[0].text
+ respuesta = self.client.messages.create(
+ model="claude-sonnet-4-6",
+ max_tokens=3000,
+ messages=[{"role": "user", "content": prompt}]
+ )
+ return respuesta.content[0].text
 
-    def exportar_word(self, contenido, nombre_archivo):
-        doc = Document()
-        doc.add_heading("Especificación Técnica", 0)
-        for parrafo in contenido.split("\n\n"):
-            doc.add_paragraph(parrafo)
-        doc.save(nombre_archivo)
-        print(f"✅ Guardado: {nombre_archivo}")
+ def exportar_word(self, contenido, nombre_archivo):
+ doc = Document()
+ doc.add_heading("Especificación Técnica", 0)
+ for parrafo in contenido.split("\n\n"):
+ doc.add_paragraph(parrafo)
+ doc.save(nombre_archivo)
+ print(f" Guardado: {nombre_archivo}")
 
 # Uso
 gen = GeneradorEspecificaciones(api_key="tu_api_key")
 
 spec = gen.generar("columna", {
-    "sección": "40×40 cm",
-    "altura": "3.5 m",
-    "carga axial": "120 toneladas",
-    "f'c": "28 MPa"
+ "sección": "40×40 cm",
+ "altura": "3.5 m",
+ "carga axial": "120 toneladas",
+ "f'c": "28 MPa"
 })
 
 gen.exportar_word(spec, "spec_columna_C1.docx")
@@ -208,14 +208,14 @@ gen.exportar_word(spec, "spec_columna_C1.docx")
 | | Anthropic Claude | Groq (Llama) | OpenAI GPT |
 | -- | --------------- | ----------- | ---------- |
 | **Costo** | $3/1M tokens | **Gratis** | $10/1M tokens |
-| **Velocidad** | Rápida | ⚡ Muy rápida | Rápida |
+| **Velocidad** | Rápida | Muy rápida | Rápida |
 | **Contexto** | 200K tokens | 32K tokens | 128K tokens |
-| **Calidad** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| **Para empezar** | ✅ | ✅✅ Ideal | ✅ |
+| **Calidad** | | | |
+| **Para empezar** | | Ideal | |
 
 ---
 
-```{admonition} 🔑 ¿Dónde consigo las API keys?
+```{admonition} ¿Dónde consigo las API keys?
 :class: note
 - **Anthropic:** [console.anthropic.com](https://console.anthropic.com)
 - **Groq (gratis):** [console.groq.com](https://console.groq.com)

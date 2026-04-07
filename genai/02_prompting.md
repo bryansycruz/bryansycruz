@@ -14,11 +14,11 @@ La ingeniería de prompts es la habilidad de escribir instrucciones claras, espe
 Un buen prompt para uso profesional en construcción tiene estas partes:
 
 ```
-[ROL]      → "Actúa como ingeniero civil con 15 años de experiencia"
-[CONTEXTO] → "Estoy revisando un edificio de 8 pisos en zona sísmica"
-[TAREA]    → "Genera una especificación técnica para las columnas"
-[FORMATO]  → "Formato: tabla + recomendación. Máximo 300 palabras"
-[RESTRICCIONES] → "Normativa NSR-10, nivel técnico intermedio"
+[ROL] "Actúa como ingeniero civil con 15 años de experiencia"
+[CONTEXTO] "Estoy revisando un edificio de 8 pisos en zona sísmica"
+[TAREA] "Genera una especificación técnica para las columnas"
+[FORMATO] "Formato: tabla + recomendación. Máximo 300 palabras"
+[RESTRICCIONES] "Normativa NSR-10, nivel técnico intermedio"
 ```
 
 ---
@@ -109,13 +109,13 @@ NUNCA:
 client = anthropic.Anthropic(api_key="tu_api_key")
 
 respuesta = client.messages.create(
-    model="claude-sonnet-4-6",
-    max_tokens=2000,
-    system=SYSTEM_PROMPT,
-    messages=[
-        {"role": "user",
-         "content": "El nivel 8 lleva 3 semanas de retraso, ¿qué hago?"}
-    ]
+ model="claude-sonnet-4-6",
+ max_tokens=2000,
+ system=SYSTEM_PROMPT,
+ messages=[
+ {"role": "user",
+ "content": "El nivel 8 lleva 3 semanas de retraso, ¿qué hago?"}
+ ]
 )
 
 print(respuesta.content[0].text)
@@ -148,11 +148,11 @@ Viga V1,Nivel 1,45,320000"""
 ```{warning}
 **Alucinaciones:** Los modelos pueden inventar datos que suenan reales.
 
-❌ Pregunta riesgosa:
+Pregunta riesgosa:
 "¿Cuál fue el costo del Edificio Cumbre en Medellín?"
-→ El modelo podría inventar una cifra si no tiene esa información.
+ El modelo podría inventar una cifra si no tiene esa información.
 
-✅ Pregunta segura:
+Pregunta segura:
 "Dado que el costo fue $18.000M COP y el plazo fue 24 meses,
 calcula el flujo de caja mensual estimado."
 
@@ -169,7 +169,7 @@ en el prompt. No asumas que el modelo los conoce.
 
 ---
 
-```{admonition} 💡 Tip para colombianos en construcción
+```{admonition} Tip para colombianos en construcción
 :class: note
 Incluye siempre la normativa local en tus prompts: **NSR-10**, **NTC**, **Decreto 945**, etc. Los modelos conocen estas normas y pueden citarlas correctamente cuando se las mencionas.
 ```

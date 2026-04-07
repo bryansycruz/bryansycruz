@@ -1,4 +1,4 @@
-# 🧠 ¿Qué es Deep Learning?
+# ¿Qué es Deep Learning?
 
 ```{admonition} ¿Cuándo usar Deep Learning?
 :class: tip
@@ -9,9 +9,9 @@
 - Acceso a GPU (o Google Colab)
 
 **NO lo uses cuando:**
-- Tienes menos de 10.000 filas → usa ML clásico (Módulo 1)
+- Tienes menos de 10.000 filas - usa ML clásico (Módulo 1)
 - Necesitas explicar el razonamiento del modelo
-- No tienes tiempo ni GPU → el entrenamiento toma horas o días
+- No tienes tiempo ni GPU - el entrenamiento toma horas o días
 ```
 
 ## Definición
@@ -31,10 +31,10 @@
 
 ## Analogía para constructoras
 
-```{admonition} 🏗️ DL es como un inspector con 30 años de experiencia
+```{admonition} DL es como un inspector con 30 años de experiencia
 :class: note
 Un inspector novato necesita una lista de verificación de 200 reglas:
-*"Si la grieta es vertical y mide >5mm → problema estructural..."*
+*"Si la grieta es vertical y mide >5mm problema estructural..."*
 
 Un inspector con 30 años **ve el muro** y **automáticamente sabe** si algo está mal, sin poder explicar exactamente por qué. Su cerebro aprendió patrones complejos de miles de inspecciones.
 
@@ -61,28 +61,28 @@ Deep Learning funciona igual: aprende patrones directamente de miles de fotos si
 ### 1. Redes Densas (Fully Connected)
 Para datos tabulares y series de tiempo:
 ```
-Entrada → Capa Oculta 1 → Capa Oculta 2 → Salida
-(3 vars)   (64 neuronas)   (32 neuronas)   (1 pred.)
+Entrada Capa Oculta 1 Capa Oculta 2 Salida
+(3 vars) (64 neuronas) (32 neuronas) (1 pred.)
 ```
 
 ### 2. Redes Convolucionales — CNN
 Para imágenes (detección de defectos):
 ```
-Imagen → Conv2D → MaxPool → Conv2D → MaxPool → Dense → Salida
-         (filtros) (reducir)  (filtros) (reducir) (clasi.)
+Imagen Conv2D MaxPool Conv2D MaxPool Dense Salida
+ (filtros) (reducir) (filtros) (reducir) (clasi.)
 ```
 
 ### 3. Redes Recurrentes — LSTM
 Para series de tiempo y texto:
 ```
-Secuencia temporal → LSTM → LSTM → Dense → Predicción
-(consumo día 1-30)  (mem.)          (día siguiente)
+Secuencia temporal LSTM LSTM Dense Predicción
+(consumo día 1-30) (mem.) (día siguiente)
 ```
 
 ### 4. Transformers
 Para procesamiento de lenguaje (actas, contratos):
 ```
-Texto → Embeddings → Multi-Head Attention → Feed Forward → Salida
+Texto Embeddings Multi-Head Attention Feed Forward Salida
 ```
 
 ---
@@ -102,45 +102,45 @@ from tensorflow.keras import layers
 
 # Construir la red CNN
 modelo = keras.Sequential([
-    layers.Input(shape=(224, 224, 3)),     # imagen 224×224 RGB
+ layers.Input(shape=(224, 224, 3)), # imagen 224×224 RGB
 
-    layers.Conv2D(32, kernel_size=3, activation="relu"),
-    layers.MaxPooling2D(pool_size=2),
+ layers.Conv2D(32, kernel_size=3, activation="relu"),
+ layers.MaxPooling2D(pool_size=2),
 
-    layers.Conv2D(64, kernel_size=3, activation="relu"),
-    layers.MaxPooling2D(pool_size=2),
+ layers.Conv2D(64, kernel_size=3, activation="relu"),
+ layers.MaxPooling2D(pool_size=2),
 
-    layers.Conv2D(128, kernel_size=3, activation="relu"),
-    layers.MaxPooling2D(pool_size=2),
+ layers.Conv2D(128, kernel_size=3, activation="relu"),
+ layers.MaxPooling2D(pool_size=2),
 
-    layers.Flatten(),
-    layers.Dense(128, activation="relu"),
-    layers.Dropout(0.5),                   # evitar sobreajuste
-    layers.Dense(1, activation="sigmoid")  # 0=sin grieta, 1=con grieta
+ layers.Flatten(),
+ layers.Dense(128, activation="relu"),
+ layers.Dropout(0.5), # evitar sobreajuste
+ layers.Dense(1, activation="sigmoid") # 0=sin grieta, 1=con grieta
 ])
 
 modelo.compile(
-    optimizer="adam",
-    loss="binary_crossentropy",
-    metrics=["accuracy"]
+ optimizer="adam",
+ loss="binary_crossentropy",
+ metrics=["accuracy"]
 )
 
 # Entrenar
 modelo.fit(
-    imagenes_entrenamiento,
-    etiquetas_entrenamiento,
-    epochs=20,
-    validation_split=0.2,
-    batch_size=32
+ imagenes_entrenamiento,
+ etiquetas_entrenamiento,
+ epochs=20,
+ validation_split=0.2,
+ batch_size=32
 )
 
 # Usar en producción
 foto = cargar_imagen("muro_inspeccion.jpg")
 resultado = modelo.predict(foto)
 if resultado > 0.5:
-    print("⚠️  GRIETA DETECTADA")
+ print(" GRIETA DETECTADA")
 else:
-    print("✅  Muro en buen estado")
+ print(" Muro en buen estado")
 ```
 
 ---
@@ -150,15 +150,15 @@ else:
 | Proyecto | Modelo | Dataset | Resultado |
 |----------|--------|---------|-----------|
 | Detección grietas en puentes (U. Illinois) | ResNet50 | 10.000 fotos | 96% precisión vs 78% inspector humano |
-| Planos PDF → BIM (Autodesk) | Mask R-CNN | 50.000 planos | Conversión automática |
+| Planos PDF BIM (Autodesk) | Mask R-CNN | 50.000 planos | Conversión automática |
 | Seguridad en obra (SmartCam) | YOLO | Cámaras en tiempo real | Alertas de casco/chaleco |
 
 ---
 
-```{admonition} 📚 Libros recomendados
+```{admonition} Libros recomendados
 :class: seealso
 - **Hands-on Machine Learning** (Géron) — capítulos 10-14
 - **Generative Deep Learning** (David Foster) — capítulos 1-3
 ```
 
-**Siguiente:** [Transfer Learning →](02_transfer_learning.md)
+**Siguiente:** [Transfer Learning ](02_transfer_learning.md)
