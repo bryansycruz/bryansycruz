@@ -28,7 +28,7 @@
  </a>
 
  <!-- Kaggle -->
- <a href="https://www.kaggle.com/bryansycruz" target="_blank" rel="noopener noreferrer" title="Kaggle"
+ <a href="https://www.kaggle.com/bryanyamacruz" target="_blank" rel="noopener noreferrer" title="Kaggle"
  style="display: inline-flex; align-items: center; justify-content: center;
  opacity: 0.5; transition: opacity 0.2s, transform 0.2s; text-decoration: none; color: currentColor;"
  onmouseover="this.style.opacity='0.9'; this.style.transform='scale(1.1)';"
