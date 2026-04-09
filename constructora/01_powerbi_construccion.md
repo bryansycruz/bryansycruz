@@ -1,5 +1,9 @@
 # PowerBI para Proyectos de Construccion
 
+```{raw} html
+<p class="tags-container"><span class="tag-badge">#powerbi</span> <span class="tag-badge">#dashboards</span> <span class="tag-badge">#datos</span> <span class="tag-badge">#visualizacion</span> <span class="tag-badge">#construccion</span></p>
+```
+
 ```{admonition} Tiempo de lectura estimado: 10 min
 :class: tip
 Aprenderas a usar PowerBI para crear dashboards de obra que muestran avance, costos y calidad en tiempo real, con integracion a Excel, SAP o cualquier fuente de datos que ya uses.
@@ -97,6 +101,7 @@ Celular / PC de la junta directiva (dashboard en vivo)
 ### Q&A (Preguntas en lenguaje natural)
 
 Puedes escribir en espanol directamente en el tablero preguntas como:
+
 - "¿Cuanto llevamos ejecutado en el capitulo de estructura?"
 - "¿Cual es el proveedor con mas rechazos este mes?"
 - "Muestra el avance de los ultimos 3 niveles"
@@ -110,6 +115,7 @@ Genera un parrafo en lenguaje natural que resume lo mas importante del tablero. 
 ### Copilot en PowerBI (version Premium)
 
 Con la licencia Premium de Microsoft 365, Copilot puede:
+
 - Crear medidas y calculos a partir de instrucciones en espanol
 - Sugerir visualizaciones apropiadas para cada tipo de dato
 - Generar resumenes ejecutivos automaticos del tablero

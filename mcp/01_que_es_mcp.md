@@ -1,5 +1,9 @@
 # Módulo 7: MCP - Model Context Protocol
 
+```{raw} html
+<p class="tags-container"><span class="tag-badge">#mcp</span> <span class="tag-badge">#integraciones</span> <span class="tag-badge">#google-drive</span> <span class="tag-badge">#protocolo</span> <span class="tag-badge">#agentes-ia</span></p>
+```
+
 ```{admonition} Tiempo de lectura estimado: 10 min
 :class: tip
 En este módulo aprenderás qué es MCP, por qué es el estándar de integración para LLMs, y cómo conectar herramientas como Google Drive, Slack y BigQuery a tus proyectos de construcción.

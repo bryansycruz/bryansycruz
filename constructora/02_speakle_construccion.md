@@ -1,5 +1,9 @@
 # Herramientas IA para Informes y Presentaciones: Speakle y otras
 
+```{raw} html
+<p class="tags-container"><span class="tag-badge">#presentaciones</span> <span class="tag-badge">#informes</span> <span class="tag-badge">#speakle</span> <span class="tag-badge">#ia-generativa</span> <span class="tag-badge">#automatizacion</span></p>
+```
+
 ```{admonition} Tiempo de lectura estimado: 8 min
 :class: tip
 Aprenderas a usar Speakle y otras herramientas de IA para generar presentaciones, informes de avance y reportes de calidad en minutos, sin necesidad de disenadores ni de construir las diapositivas manualmente.
@@ -70,6 +74,7 @@ Y Gamma genera 8-10 diapositivas con diseno, iconos y estructura logica. Solo ti
 ### Microsoft Copilot en PowerPoint
 
 Si tu empresa usa Microsoft 365, Copilot puede:
+
 - Crear una presentacion completa desde un documento Word o un texto
 - Agregar diseno profesional automaticamente
 - Reescribir el texto de las diapositivas en un tono mas ejecutivo

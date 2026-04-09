@@ -1,5 +1,9 @@
 # Módulo 9: Fine-Tuning de Modelos
 
+```{raw} html
+<p class="tags-container"><span class="tag-badge">#fine-tuning</span> <span class="tag-badge">#lora</span> <span class="tag-badge">#qlora</span> <span class="tag-badge">#entrenamiento</span> <span class="tag-badge">#absa</span></p>
+```
+
 ```{admonition} Tiempo de lectura estimado: 11 min
 :class: tip
 Aprenderás cuándo vale la pena hacer fine-tuning, la diferencia entre las técnicas disponibles (LoRA, QLoRA, Full), y cómo entrenar un modelo para analizar actas y documentos técnicos de construcción.
@@ -42,6 +46,7 @@ La salida se calcula como: W·x + (B·A)·x
 ```
 
 Esto permite:
+
 - Entrenar solo el 0.1 - 1% de los parámetros totales
 - Mantener el modelo base intacto (puedes combinar varios LoRA)
 - Requisitos de GPU radicalmente menores

@@ -14,9 +14,6 @@ parse:
     - substitution
 
 html:
-  use_issues_button: true
-  use_repository_button: true
-  use_edit_page_button: true
   home_page_in_navbar: true
   favicon: ""
 
@@ -33,5 +30,18 @@ launch_buttons:
 sphinx:
   config:
     language: es
+    html_static_path:
+      - _static
+    html_css_files:
+      - custom.css
+    html_sidebars:
+      "**": []
     html_theme_options:
       navigation_with_keys: true
+      navbar_end:
+        - search-field.html
+        - navbar-icon-links.html
+      secondary_sidebar_items: []
+      use_download_button: false
+      use_fullscreen_button: false
+      show_toc_level: 0

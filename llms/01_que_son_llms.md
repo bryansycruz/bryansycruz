@@ -1,5 +1,9 @@
 # ¿Qué son los LLMs?
 
+```{raw} html
+<p class="tags-container"><span class="tag-badge">#llm</span> <span class="tag-badge">#tokens</span> <span class="tag-badge">#claude</span> <span class="tag-badge">#groq</span> <span class="tag-badge">#transformers</span></p>
+```
+
 ```{admonition} Definición rápida
 :class: tip
 **Large Language Models (LLMs)** son modelos de IA entrenados en billones de palabras para entender y generar lenguaje natural. Son la tecnología detrás de ChatGPT, Claude y Gemini.

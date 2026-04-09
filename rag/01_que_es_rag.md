@@ -1,5 +1,9 @@
 # ¿Qué es RAG?
 
+```{raw} html
+<p class="tags-container"><span class="tag-badge">#rag</span> <span class="tag-badge">#documentos</span> <span class="tag-badge">#embeddings</span> <span class="tag-badge">#faiss</span> <span class="tag-badge">#busqueda</span></p>
+```
+
 ```{admonition} El problema que RAG resuelve
 :class: warning
 Los LLMs solo saben lo que vieron durante su entrenamiento. No conocen **tus contratos**, **tus actas** ni **tus planos específicos**.

@@ -1,5 +1,9 @@
 # Agentes de IA
 
+```{raw} html
+<p class="tags-container"><span class="tag-badge">#agentes-ia</span> <span class="tag-badge">#react</span> <span class="tag-badge">#langchain</span> <span class="tag-badge">#automatizacion</span> <span class="tag-badge">#crewai</span></p>
+```
+
 ## De "responder preguntas" a "ejecutar tareas"
 
 Un LLM estándar solo genera texto. Un **Agente de IA** puede:

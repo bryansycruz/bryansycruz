@@ -1,5 +1,9 @@
 # ¿Qué es Machine Learning?
 
+```{raw} html
+<p class="tags-container"><span class="tag-badge">#machine-learning</span> <span class="tag-badge">#python</span> <span class="tag-badge">#algoritmos</span> <span class="tag-badge">#prediccion</span> <span class="tag-badge">#construccion</span></p>
+```
+
 ```{admonition} Tiempo de lectura estimado: 8 min
 :class: tip
 Al terminar este módulo podrás identificar qué problemas de tu obra o proyecto se pueden resolver con Machine Learning, y entenderás cómo las máquinas "aprenden" de datos reales.

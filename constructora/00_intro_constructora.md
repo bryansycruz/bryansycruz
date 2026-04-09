@@ -1,5 +1,9 @@
 # Constructora: IA Aplicada a tu Empresa
 
+```{raw} html
+<p class="tags-container"><span class="tag-badge">#construccion</span> <span class="tag-badge">#aec</span> <span class="tag-badge">#roi</span> <span class="tag-badge">#sin-codigo</span> <span class="tag-badge">#valor</span></p>
+```
+
 ```{admonition} Para quien es esta seccion
 :class: tip
 Esta seccion esta disenada para directores de obra, residentes, arquitectos y gerentes de proyectos de construccion. No necesitas saber programar. El objetivo es que entiendas que herramientas existen, que resuelven y como puedes empezar a usarlas esta semana.

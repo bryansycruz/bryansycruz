@@ -1,5 +1,9 @@
 # Modulo 10: Casos Practicos Completos
 
+```{raw} html
+<p class="tags-container"><span class="tag-badge">#produccion</span> <span class="tag-badge">#streamlit</span> <span class="tag-badge">#recomasys</span> <span class="tag-badge">#apu</span> <span class="tag-badge">#rag</span> <span class="tag-badge">#deep-learning</span></p>
+```
+
 ```{admonition} Tiempo de lectura estimado: 20 min
 :class: tip
 Este modulo integra todo lo aprendido en los modulos anteriores con cuatro sistemas reales, listos para implementar. Cada caso comienza con una explicacion para arquitectos y constructores, seguida del codigo para quien quiera implementarlo.

@@ -1,5 +1,9 @@
 # IA Generativa
 
+```{raw} html
+<p class="tags-container"><span class="tag-badge">#ia-generativa</span> <span class="tag-badge">#diffusion</span> <span class="tag-badge">#texto</span> <span class="tag-badge">#gans</span> <span class="tag-badge">#creatividad</span></p>
+```
+
 ```{admonition} ¿Qué diferencia a la IA Generativa del ML tradicional?
 :class: tip
 - **ML tradicional:** Analiza y predice *"¿Hay una grieta?"*

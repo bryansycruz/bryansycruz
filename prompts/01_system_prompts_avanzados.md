@@ -1,5 +1,9 @@
 # Módulo 8: System Prompts Avanzados
 
+```{raw} html
+<p class="tags-container"><span class="tag-badge">#prompting</span> <span class="tag-badge">#system-prompt</span> <span class="tag-badge">#few-shot</span> <span class="tag-badge">#chain-of-thought</span> <span class="tag-badge">#json</span></p>
+```
+
 ```{admonition} Tiempo de lectura estimado: 10 min
 :class: tip
 Aprenderás a diseñar system prompts robustos para asistentes especializados en construcción, y las técnicas avanzadas de prompting que marcan la diferencia entre una respuesta genérica y una respuesta técnica precisa.

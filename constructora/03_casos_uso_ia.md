@@ -1,5 +1,9 @@
 # Casos de Uso de IA para Arquitectos y Constructores
 
+```{raw} html
+<p class="tags-container"><span class="tag-badge">#casos-uso</span> <span class="tag-badge">#sin-codigo</span> <span class="tag-badge">#roi</span> <span class="tag-badge">#construccion</span> <span class="tag-badge">#practica</span></p>
+```
+
 ```{admonition} Tiempo de lectura estimado: 12 min
 :class: tip
 Cinco aplicaciones reales de IA en obra colombiana. Cada caso explica el problema, la solucion, lo que necesitas para implementarlo y el ahorro real en tiempo o costo. Sin codigo. Sin tecnicismos innecesarios.

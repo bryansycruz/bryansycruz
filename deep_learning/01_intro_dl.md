@@ -1,5 +1,9 @@
 # ¿Qué es Deep Learning?
 
+```{raw} html
+<p class="tags-container"><span class="tag-badge">#deep-learning</span> <span class="tag-badge">#redes-neuronales</span> <span class="tag-badge">#vision-artificial</span> <span class="tag-badge">#defectos</span> <span class="tag-badge">#transfer-learning</span></p>
+```
+
 ```{admonition} ¿Cuándo usar Deep Learning?
 :class: tip
 **Úsalo cuando tienes:**
