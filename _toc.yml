@@ -1,37 +1,46 @@
 format: jb-book
 root: intro
 parts:
-  - caption: "Módulo 1 - Machine Learning"
+  - caption: "Teorico"
     chapters:
       - file: ml/01_que_es_ml
-      - file: ml/02_tipos_ml
-      - file: ml/03_pipeline_ml
-      - file: ml/04_librerias
-
-  - caption: "Módulo 2 - Deep Learning"
-    chapters:
+        sections:
+          - file: ml/02_tipos_ml
+          - file: ml/03_pipeline_ml
+          - file: ml/04_librerias
       - file: deep_learning/01_intro_dl
-      - file: deep_learning/02_transfer_learning
-
-  - caption: "Módulo 3 - IA Generativa"
-    chapters:
+        sections:
+          - file: deep_learning/02_transfer_learning
       - file: genai/01_intro_genai
-      - file: genai/02_prompting
-
-  - caption: "Módulo 4 - LLMs"
-    chapters:
+        sections:
+          - file: genai/02_prompting
       - file: llms/01_que_son_llms
-      - file: llms/02_apis_llms
-
-  - caption: "Módulo 5 - Agentes de IA"
-    chapters:
+        sections:
+          - file: llms/02_apis_llms
       - file: agentes/01_intro_agentes
-      - file: agentes/02_agente_basico
-
-  - caption: "Módulo 6 - RAG"
-    chapters:
+        sections:
+          - file: agentes/02_agente_basico
       - file: rag/01_que_es_rag
-      - file: rag/02_rag_construccion
+        sections:
+          - file: rag/02_rag_construccion
+      - file: mcp/01_que_es_mcp
+      - file: prompts/01_system_prompts_avanzados
+      - file: fine_tuning/01_fine_tuning
+      - file: casos/01_casos_practicos
+
+  - caption: "Constructora"
+    chapters:
+      - file: constructora/00_intro_constructora
+      - file: constructora/01_powerbi_construccion
+      - file: constructora/02_speakle_construccion
+      - file: constructora/03_casos_uso_ia
+
+  - caption: "Academia"
+    chapters:
+      - file: academia/00_intro_academia
+      - file: academia/01_kaggle_colab
+      - file: academia/02_papers_clave
+      - file: academia/03_recursos_prompts
 
   - caption: "Legal"
     chapters:
