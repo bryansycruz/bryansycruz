@@ -14,6 +14,7 @@ Cinco aplicaciones reales de IA en obra colombiana. Cada caso explica el problem
 ## Como leer esta pagina
 
 Cada caso sigue el mismo formato:
+
 - **El problema:** que situacion resuelve
 - **Como funciona la IA:** la logica sin tecnicismos
 - **Lo que necesitas:** requisitos reales (equipo, datos, costo)
@@ -68,11 +69,11 @@ La IA no reemplaza al ingeniero estructural. Si el modelo detecta una grieta est
 
 ## Caso 2: Generador automatico de APUs
 
-### El problema
+### El problema: presupuestacion manual
 
 Preparar un Analisis de Precios Unitarios (APU) para una actividad toma entre 30 minutos y 2 horas dependiendo de la complejidad. En un proyecto de 500 items, eso son cientos de horas solo en presupuestacion. El riesgo de error en cantidades o precios es alto cuando se trabaja bajo presion.
 
-### Como funciona la IA
+### Como funciona: generador de APU
 
 Le describes la actividad al modelo en lenguaje natural — exactamente como se lo describiras a un presupuestador — y el genera el APU completo con materiales, mano de obra, equipos, AIU y precio unitario. Usa precios de referencia CAMACOL 2024 para la ciudad que indiques.
 
@@ -89,7 +90,7 @@ La IA genera:
 - Precio unitario: $512,000 COP/m
 ```
 
-### Lo que necesitas
+### Lo que necesitas para el APU
 
 - Acceso a Claude o ChatGPT (hay versiones gratuitas)
 - Descripcion clara de la actividad (igual que como la escribirias en el pliego)
@@ -99,7 +100,7 @@ La IA genera:
 
 Puedes usar esto **hoy mismo** con Claude o ChatGPT sin ninguna configuracion adicional. El prompt del modulo Teorico (Sistema de Prompts Avanzados) te da exactamente como estructurar la solicitud.
 
-### Valor concreto
+### Ahorro real: APU automatico
 
 | Sin IA | Con IA |
 | ------ | ------ |
@@ -111,13 +112,13 @@ Puedes usar esto **hoy mismo** con Claude o ChatGPT sin ninguna configuracion ad
 
 ## Caso 3: Analisis automatico de actas de comite (RECOMASYS)
 
-### El problema
+### El problema: actas sin revision sistematica
 
 Todas las semanas se escribe un acta de comite de obra. Ese documento tiene informacion critica: acuerdos incumplidos, alertas de calidad, retrasos de proveedores, problemas de diseno. Pero nadie tiene tiempo de leer todas las actas de los ultimos 3 meses y detectar si hay un patron de deterioro en algun aspecto del proyecto.
 
 El resultado: los problemas se escalan en la reunion de junta cuando ya es tarde para actuar a bajo costo.
 
-### Como funciona la IA
+### Como funciona: RECOMASYS
 
 RECOMASYS es un sistema que lee cada acta nueva en PDF, le asigna un puntaje del 1 al 5 a siete aspectos del proyecto (calidad, cronograma, costos, seguridad, proveedores, diseno, comunicacion) y detecta tres tipos de patrones de riesgo:
 
@@ -137,13 +138,13 @@ Patron 3 - Bajo sostenido:
 
 Cuando detecta una alerta, genera automaticamente un plan de accion: causa probable, accion inmediata, responsable y seguimiento sugerido.
 
-### Lo que necesitas
+### Lo que necesitas para RECOMASYS
 
 - PDFs de las actas de comite (las que ya tienes)
 - Un computador con conexion a internet
 - El codigo del modulo Teorico (Casos Practicos) para instalarlo
 
-### Valor concreto
+### Ahorro real: deteccion temprana
 
 Un defecto estructural detectado en la semana 8 cuesta $3M resolverlo. El mismo defecto detectado en la semana 20 (cuando ya esta cubierto) puede costar $50M o mas en demolicion y refundicion. RECOMASYS detecta la tendencia en la semana 10 cuando el costo de intervencion todavia es bajo.
 
@@ -158,11 +159,11 @@ El residente de obra es el medico. RECOMASYS son los examenes automaticos.
 
 ## Caso 4: Chatbot para consulta de documentos tecnicos
 
-### El problema
+### El problema: busqueda en documentos de obra
 
 Un proyecto mediano maneja 300-500 documentos: contratos, planos, especificaciones tecnicas, fichas tecnicas de materiales, actas de entrega, garantias de proveedores. Cuando el residente necesita verificar una especificacion en campo, buscar el documento correcto toma 15-30 minutos. Muchas veces simplemente se toma la decision sin verificar.
 
-### Como funciona la IA
+### Como funciona: chatbot documental
 
 El sistema convierte todos los PDFs del proyecto en una "memoria consultable". Luego puedes hacerle preguntas en lenguaje natural y el sistema busca en todos los documentos y responde citando exactamente el documento y la pagina.
 
@@ -177,13 +178,13 @@ a la compresion f'c = 28 MPa (280 kg/cm2). La dosificacion sera
 verificada por el laboratorio de materiales antes de cada fundicion.'"
 ```
 
-### Lo que necesitas
+### Lo que necesitas para el chatbot RAG
 
 - Los PDFs del proyecto en una carpeta organizada
 - El codigo del modulo Teorico (RAG) para indexarlos
 - Acceso a Groq (gratuito) para el modelo de lenguaje
 
-### Valor concreto
+### Ahorro real: busqueda documental
 
 | Situacion | Sin chatbot | Con chatbot |
 | --------- | ----------- | ----------- |
@@ -195,11 +196,11 @@ verificada por el laboratorio de materiales antes de cada fundicion.'"
 
 ## Caso 5: Asistente de planificacion y cronograma
 
-### El problema
+### El problema: gestion de retrasos en ruta critica
 
 Cuando hay un retraso en una actividad critica, el director necesita saber rapidamente: ¿cuanto impacta al cronograma general? ¿que actividades puedo acelerar para compensar? ¿que recursos adicionales necesito? Hacer ese analisis manualmente en MS Project o Primavera toma horas.
 
-### Como funciona la IA
+### Como funciona: asistente de planificacion
 
 Describes la situacion al asistente de IA y el analiza el impacto y propone alternativas de recuperacion:
 
@@ -214,21 +215,21 @@ mamposteria nivel 8. Tenemos presupuesto para un turno adicional.
 La IA responde:
 "Con el retraso de 5 dias en la ruta critica, tienes tres opciones:
 
-Opcion 1 (Recuperacion rapida): 
+Opcion 1 (Recuperacion rapida):
   Turno nocturno en estructura niveles 9-10 la proxima semana.
   Costo adicional: ~$8M. Recuperas 4 de los 5 dias.
 
-Opcion 2 (Reorganizacion): 
+Opcion 2 (Reorganizacion):
   Adelantar mamposteria niveles 1-4 (no esta en ruta critica)
   con el mismo personal, sin costo adicional.
   No recuperas tiempo en ruta critica pero mejoras el avance general.
 
-Opcion 3 (Combinada): 
+Opcion 3 (Combinada):
   1 dia de turno nocturno en nivel 8 + adelantar instalaciones
   hidrosanitarias nivel 6. Costo: $1.5M. Recuperas 2 dias en critica."
 ```
 
-### Lo que necesitas
+### Lo que necesitas para la planificacion IA
 
 - Claude o ChatGPT (version gratuita o de pago)
 - La informacion del cronograma resumida (no necesitas exportar el archivo completo)

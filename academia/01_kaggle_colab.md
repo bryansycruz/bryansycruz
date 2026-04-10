@@ -1,5 +1,9 @@
 # Kaggle y Google Colab: Practica sin Instalar Nada
 
+```{raw} html
+<p class="tags-container"><span class="tag-badge">#kaggle</span> <span class="tag-badge">#colab</span> <span class="tag-badge">#gpu-gratis</span> <span class="tag-badge">#practica</span> <span class="tag-badge">#python</span></p>
+```
+
 ```{admonition} Tiempo de lectura estimado: 10 min
 :class: tip
 Aprenderas a usar Google Colab para ejecutar los ejemplos de este curso directamente en el navegador, y Kaggle para encontrar datasets de construccion y practicar con machine learning de forma gratuita.

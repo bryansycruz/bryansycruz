@@ -1,5 +1,9 @@
 # Academia: Recursos para Profundizar
 
+```{raw} html
+<p class="tags-container"><span class="tag-badge">#academia</span> <span class="tag-badge">#recursos</span> <span class="tag-badge">#investigacion</span> <span class="tag-badge">#aprendizaje</span></p>
+```
+
 ```{admonition} Para quien es esta seccion
 :class: tip
 Esta seccion es para quienes quieren ir mas alla de los modulos teoricos y practicos. Encontraras guias para usar entornos de practica gratuitos (Kaggle y Google Colab), los papers de investigacion mas relevantes sobre IA en construccion, y una biblioteca de prompts lista para usar en tu trabajo diario.

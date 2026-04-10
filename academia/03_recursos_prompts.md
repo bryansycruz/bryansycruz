@@ -1,5 +1,9 @@
 # Biblioteca de Prompts para Construccion
 
+```{raw} html
+<p class="tags-container"><span class="tag-badge">#prompts</span> <span class="tag-badge">#plantillas</span> <span class="tag-badge">#productividad</span> <span class="tag-badge">#nsr-10</span> <span class="tag-badge">#apu</span></p>
+```
+
 ```{admonition} Tiempo de lectura estimado: 10 min
 :class: tip
 Plantillas de prompts listas para copiar y usar con Claude o ChatGPT. Cada plantilla esta disenada para una tarea especifica del sector de la construccion. Solo reemplaza el texto entre corchetes con tu informacion real.

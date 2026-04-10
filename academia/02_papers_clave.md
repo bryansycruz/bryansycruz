@@ -1,5 +1,9 @@
 # Papers Clave: IA en Construccion y AEC
 
+```{raw} html
+<p class="tags-container"><span class="tag-badge">#papers</span> <span class="tag-badge">#investigacion</span> <span class="tag-badge">#aec</span> <span class="tag-badge">#estado-del-arte</span> <span class="tag-badge">#academia</span></p>
+```
+
 ```{admonition} Tiempo de lectura estimado: 12 min
 :class: tip
 Resumen de los papers de investigacion mas relevantes sobre inteligencia artificial aplicada al sector de la construccion. Cada paper incluye la idea principal, por que importa y como se relaciona con lo que aprendiste en el curso.
