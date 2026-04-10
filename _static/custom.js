@@ -1,6 +1,43 @@
 /* -------------------------------------------------------
-   1. Convert "Archivo" and "Tags" navbar dropdowns into
-      direct pill-button links (they each have only one page).
+   1. Dark mode toggle (persiste en localStorage)
+   ------------------------------------------------------- */
+(function () {
+  var saved = localStorage.getItem('darkMode');
+  if (saved === 'on' ||
+    (saved === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark-mode-pending');
+  }
+})();
+
+document.addEventListener('DOMContentLoaded', function () {
+  /* Apply pending dark mode before paint to avoid flash */
+  if (document.documentElement.classList.contains('dark-mode-pending')) {
+    document.body.classList.add('dark-mode');
+    document.documentElement.classList.remove('dark-mode-pending');
+  }
+
+  /* Build the toggle button */
+  var isDark = document.body.classList.contains('dark-mode');
+  var btn = document.createElement('div');
+  btn.id = 'dark-mode-toggle';
+  btn.title = 'Cambiar tema claro / oscuro';
+  btn.textContent = isDark ? '☀️' : '🌙';
+  btn.setAttribute('role', 'button');
+  btn.setAttribute('aria-label', 'Cambiar tema');
+
+  btn.addEventListener('click', function () {
+    document.body.classList.toggle('dark-mode');
+    var nowDark = document.body.classList.contains('dark-mode');
+    btn.textContent = nowDark ? '☀️' : '🌙';
+    localStorage.setItem('darkMode', nowDark ? 'on' : 'off');
+  });
+
+  document.body.appendChild(btn);
+});
+
+/* -------------------------------------------------------
+   2. Convert "Archivo" and "Tags" navbar dropdowns
+      into direct pill-button links.
    ------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', function () {
   var navItems = document.querySelectorAll('.navbar-nav .nav-item.dropdown');
@@ -10,12 +47,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var text = toggler.textContent.trim();
     if (text !== 'Archivo' && text !== 'Tags') return;
 
-    /* Grab the first (and only) link inside the dropdown */
     var innerLink = item.querySelector('.dropdown-menu a.nav-link');
     if (!innerLink) return;
     var href = innerLink.getAttribute('href');
 
-    /* Build a plain <a> styled as a pill button */
     var pill = document.createElement('a');
     pill.href = href;
     pill.className = 'nav-link nav-btn-pill';
@@ -25,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* -------------------------------------------------------
-   2. Floating "← Inicio" button on every page except home.
+   3. Floating "← Inicio" button on inner pages.
    ------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', function () {
   var brand = document.querySelector('.navbar-brand, .navbar-brand-link');

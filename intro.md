@@ -75,231 +75,235 @@
 
 ```{raw} html
 <!-- ====== EJE TEORICO ====== -->
-<div style="margin: 2.5rem 0 0.5rem;">
- <div style="font-size: 0.7rem; opacity: 0.45; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; border-bottom: 1px solid currentColor; padding-bottom: 0.4rem;">
- Eje Teorico — 10 modulos
- </div>
- <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+<div class="stack-section">
+  <div class="stack-section-header teorico">📚 Eje Teórico — 10 módulos</div>
+  <div class="stack-grid">
 
- <a href="ml/01_que_es_ml.html" style="text-decoration: none; color: inherit;">
- <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.2rem 1.4rem;
- opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
- onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
- onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
- <div style="font-size: 0.65rem; opacity: 0.45; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Módulo 1</div>
- <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">Machine Learning</div>
- <div style="font-size: 0.82rem; opacity: 0.7; line-height: 1.5;">Tipos de aprendizaje, algoritmos, pipeline completo y librerías.</div>
- </div>
- </a>
+    <a href="ml/01_que_es_ml.html" class="stack-card teorico">
+      <div class="stack-card-icon">🤖</div>
+      <div class="stack-card-label">Módulo 1</div>
+      <div class="stack-card-title">Machine Learning</div>
+      <div class="stack-card-desc">Tipos de aprendizaje, algoritmos clave, pipeline completo y librerías esenciales.</div>
+      <div class="stack-card-tags">
+        <span class="stack-card-tag">#ml</span>
+        <span class="stack-card-tag">#python</span>
+        <span class="stack-card-tag">#scikit-learn</span>
+      </div>
+    </a>
 
- <a href="deep_learning/01_intro_dl.html" style="text-decoration: none; color: inherit;">
- <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.2rem 1.4rem;
- opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
- onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
- onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
- <div style="font-size: 0.65rem; opacity: 0.45; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Módulo 2</div>
- <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">Deep Learning</div>
- <div style="font-size: 0.82rem; opacity: 0.7; line-height: 1.5;">Redes neuronales, CNNs para detección de defectos y Transfer Learning.</div>
- </div>
- </a>
+    <a href="deep_learning/01_intro_dl.html" class="stack-card teorico">
+      <div class="stack-card-icon">🧠</div>
+      <div class="stack-card-label">Módulo 2</div>
+      <div class="stack-card-title">Deep Learning</div>
+      <div class="stack-card-desc">Redes neuronales, CNNs para detección de defectos y Transfer Learning.</div>
+      <div class="stack-card-tags">
+        <span class="stack-card-tag">#deep-learning</span>
+        <span class="stack-card-tag">#cnn</span>
+        <span class="stack-card-tag">#vision</span>
+      </div>
+    </a>
 
- <a href="genai/01_intro_genai.html" style="text-decoration: none; color: inherit;">
- <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.2rem 1.4rem;
- opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
- onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
- onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
- <div style="font-size: 0.65rem; opacity: 0.45; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Módulo 3</div>
- <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">IA Generativa</div>
- <div style="font-size: 0.82rem; opacity: 0.7; line-height: 1.5;">Modelos generativos, Diffusion, GANs y generación de texto e imágenes.</div>
- </div>
- </a>
+    <a href="genai/01_intro_genai.html" class="stack-card teorico">
+      <div class="stack-card-icon">✨</div>
+      <div class="stack-card-label">Módulo 3</div>
+      <div class="stack-card-title">IA Generativa</div>
+      <div class="stack-card-desc">Modelos generativos, Diffusion, GANs y generación de texto e imágenes.</div>
+      <div class="stack-card-tags">
+        <span class="stack-card-tag">#ia-generativa</span>
+        <span class="stack-card-tag">#diffusion</span>
+      </div>
+    </a>
 
- <a href="llms/01_que_son_llms.html" style="text-decoration: none; color: inherit;">
- <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.2rem 1.4rem;
- opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
- onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
- onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
- <div style="font-size: 0.65rem; opacity: 0.45; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Módulo 4</div>
- <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">LLMs</div>
- <div style="font-size: 0.82rem; opacity: 0.7; line-height: 1.5;">Large Language Models: uso vía API y prompting efectivo.</div>
- </div>
- </a>
+    <a href="llms/01_que_son_llms.html" class="stack-card teorico">
+      <div class="stack-card-icon">💬</div>
+      <div class="stack-card-label">Módulo 4</div>
+      <div class="stack-card-title">LLMs</div>
+      <div class="stack-card-desc">Large Language Models: cómo funcionan, uso vía API y prompting efectivo.</div>
+      <div class="stack-card-tags">
+        <span class="stack-card-tag">#llm</span>
+        <span class="stack-card-tag">#transformers</span>
+        <span class="stack-card-tag">#api</span>
+      </div>
+    </a>
 
- <a href="agentes/01_intro_agentes.html" style="text-decoration: none; color: inherit;">
- <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.2rem 1.4rem;
- opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
- onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
- onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
- <div style="font-size: 0.65rem; opacity: 0.45; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Módulo 5</div>
- <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">Agentes de IA</div>
- <div style="font-size: 0.82rem; opacity: 0.7; line-height: 1.5;">Arquitectura ReAct, herramientas, LangChain y CrewAI.</div>
- </div>
- </a>
+    <a href="agentes/01_intro_agentes.html" class="stack-card teorico">
+      <div class="stack-card-icon">🔧</div>
+      <div class="stack-card-label">Módulo 5</div>
+      <div class="stack-card-title">Agentes de IA</div>
+      <div class="stack-card-desc">Arquitectura ReAct, herramientas, LangChain y CrewAI para automatizar tareas.</div>
+      <div class="stack-card-tags">
+        <span class="stack-card-tag">#agentes-ia</span>
+        <span class="stack-card-tag">#langchain</span>
+      </div>
+    </a>
 
- <a href="rag/01_que_es_rag.html" style="text-decoration: none; color: inherit;">
- <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.2rem 1.4rem;
- opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
- onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
- onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
- <div style="font-size: 0.65rem; opacity: 0.45; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Módulo 6</div>
- <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">RAG</div>
- <div style="font-size: 0.82rem; opacity: 0.7; line-height: 1.5;">Consulta inteligente de tus propios documentos técnicos.</div>
- </div>
- </a>
+    <a href="rag/01_que_es_rag.html" class="stack-card teorico">
+      <div class="stack-card-icon">📄</div>
+      <div class="stack-card-label">Módulo 6</div>
+      <div class="stack-card-title">RAG</div>
+      <div class="stack-card-desc">Consulta inteligente de tus propios documentos técnicos con FAISS y Groq.</div>
+      <div class="stack-card-tags">
+        <span class="stack-card-tag">#rag</span>
+        <span class="stack-card-tag">#faiss</span>
+        <span class="stack-card-tag">#documentos</span>
+      </div>
+    </a>
 
- <a href="mcp/01_que_es_mcp.html" style="text-decoration: none; color: inherit;">
- <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.2rem 1.4rem;
- opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
- onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
- onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
- <div style="font-size: 0.65rem; opacity: 0.45; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Módulo 7</div>
- <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">MCP</div>
- <div style="font-size: 0.82rem; opacity: 0.7; line-height: 1.5;">Model Context Protocol: conecta Claude con Drive, Slack y BigQuery.</div>
- </div>
- </a>
+    <a href="mcp/01_que_es_mcp.html" class="stack-card teorico">
+      <div class="stack-card-icon">🔌</div>
+      <div class="stack-card-label">Módulo 7</div>
+      <div class="stack-card-title">MCP</div>
+      <div class="stack-card-desc">Model Context Protocol: conecta Claude con Drive, Slack y BigQuery.</div>
+      <div class="stack-card-tags">
+        <span class="stack-card-tag">#mcp</span>
+        <span class="stack-card-tag">#integraciones</span>
+      </div>
+    </a>
 
- <a href="prompts/01_system_prompts_avanzados.html" style="text-decoration: none; color: inherit;">
- <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.2rem 1.4rem;
- opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
- onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
- onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
- <div style="font-size: 0.65rem; opacity: 0.45; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Módulo 8</div>
- <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">System Prompts Avanzados</div>
- <div style="font-size: 0.82rem; opacity: 0.7; line-height: 1.5;">Asistentes especializados con Chain-of-Thought y Few-Shot.</div>
- </div>
- </a>
+    <a href="prompts/01_system_prompts_avanzados.html" class="stack-card teorico">
+      <div class="stack-card-icon">⚡</div>
+      <div class="stack-card-label">Módulo 8</div>
+      <div class="stack-card-title">System Prompts Avanzados</div>
+      <div class="stack-card-desc">Asistentes especializados con Chain-of-Thought, Few-Shot y salidas JSON.</div>
+      <div class="stack-card-tags">
+        <span class="stack-card-tag">#prompting</span>
+        <span class="stack-card-tag">#chain-of-thought</span>
+      </div>
+    </a>
 
- <a href="fine_tuning/01_fine_tuning.html" style="text-decoration: none; color: inherit;">
- <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.2rem 1.4rem;
- opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
- onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
- onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
- <div style="font-size: 0.65rem; opacity: 0.45; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Módulo 9</div>
- <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">Fine-Tuning</div>
- <div style="font-size: 0.82rem; opacity: 0.7; line-height: 1.5;">LoRA y QLoRA: especializa un modelo con datos de tu empresa.</div>
- </div>
- </a>
+    <a href="fine_tuning/01_fine_tuning.html" class="stack-card teorico">
+      <div class="stack-card-icon">🎯</div>
+      <div class="stack-card-label">Módulo 9</div>
+      <div class="stack-card-title">Fine-Tuning</div>
+      <div class="stack-card-desc">LoRA y QLoRA: especializa un modelo con los datos de tu empresa.</div>
+      <div class="stack-card-tags">
+        <span class="stack-card-tag">#fine-tuning</span>
+        <span class="stack-card-tag">#lora</span>
+        <span class="stack-card-tag">#qlora</span>
+      </div>
+    </a>
 
- <a href="casos/01_casos_practicos.html" style="text-decoration: none; color: inherit;">
- <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.2rem 1.4rem;
- opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
- onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
- onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
- <div style="font-size: 0.65rem; opacity: 0.45; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Módulo 10</div>
- <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">Casos Prácticos</div>
- <div style="font-size: 0.82rem; opacity: 0.7; line-height: 1.5;">RECOMASYS, chatbot RAG, clasificador de defectos y APUs.</div>
- </div>
- </a>
+    <a href="casos/01_casos_practicos.html" class="stack-card teorico">
+      <div class="stack-card-icon">🏗️</div>
+      <div class="stack-card-label">Módulo 10</div>
+      <div class="stack-card-title">Casos Prácticos</div>
+      <div class="stack-card-desc">RECOMASYS, chatbot RAG, clasificador de defectos y generador de APUs.</div>
+      <div class="stack-card-tags">
+        <span class="stack-card-tag">#construccion</span>
+        <span class="stack-card-tag">#recomasys</span>
+        <span class="stack-card-tag">#apu</span>
+      </div>
+    </a>
 
- </div>
+  </div>
 </div>
 
 <!-- ====== EJE CONSTRUCTORA ====== -->
-<div style="margin: 2.5rem 0 0.5rem;">
- <div style="font-size: 0.7rem; opacity: 0.45; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; border-bottom: 1px solid currentColor; padding-bottom: 0.4rem;">
- Constructora — Herramientas y casos sin codigo
- </div>
- <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+<div class="stack-section">
+  <div class="stack-section-header constructora">🏢 Constructora — Herramientas y casos sin código</div>
+  <div class="stack-grid">
 
- <a href="constructora/00_intro_constructora.html" style="text-decoration: none; color: inherit;">
- <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.2rem 1.4rem;
- opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
- onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
- onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
- <div style="font-size: 0.65rem; opacity: 0.45; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Introduccion</div>
- <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">IA para tu Empresa</div>
- <div style="font-size: 0.82rem; opacity: 0.7; line-height: 1.5;">Que valor genera la IA para una constructora y por donde empezar.</div>
- </div>
- </a>
+    <a href="constructora/00_intro_constructora.html" class="stack-card constructora">
+      <div class="stack-card-icon">💡</div>
+      <div class="stack-card-label">Introducción</div>
+      <div class="stack-card-title">IA para tu Empresa</div>
+      <div class="stack-card-desc">Qué valor genera la IA para una constructora y por dónde empezar sin código.</div>
+      <div class="stack-card-tags">
+        <span class="stack-card-tag">#roi</span>
+        <span class="stack-card-tag">#sin-codigo</span>
+        <span class="stack-card-tag">#aec</span>
+      </div>
+    </a>
 
- <a href="constructora/01_powerbi_construccion.html" style="text-decoration: none; color: inherit;">
- <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.2rem 1.4rem;
- opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
- onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
- onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
- <div style="font-size: 0.65rem; opacity: 0.45; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Herramienta</div>
- <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">PowerBI para Obra</div>
- <div style="font-size: 0.82rem; opacity: 0.7; line-height: 1.5;">Dashboards de avance, costos y calidad conectados a tus datos.</div>
- </div>
- </a>
+    <a href="constructora/01_powerbi_construccion.html" class="stack-card constructora">
+      <div class="stack-card-icon">📊</div>
+      <div class="stack-card-label">Herramienta</div>
+      <div class="stack-card-title">PowerBI para Obra</div>
+      <div class="stack-card-desc">5 dashboards esenciales: avance, costos, proveedores, calidad y flujo de caja.</div>
+      <div class="stack-card-tags">
+        <span class="stack-card-tag">#powerbi</span>
+        <span class="stack-card-tag">#dashboards</span>
+      </div>
+    </a>
 
- <a href="constructora/02_speakle_construccion.html" style="text-decoration: none; color: inherit;">
- <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.2rem 1.4rem;
- opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
- onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
- onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
- <div style="font-size: 0.65rem; opacity: 0.45; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Herramienta</div>
- <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">Speakle e Informes IA</div>
- <div style="font-size: 0.82rem; opacity: 0.7; line-height: 1.5;">Genera presentaciones e informes de avance automaticamente.</div>
- </div>
- </a>
+    <a href="constructora/02_speakle_construccion.html" class="stack-card constructora">
+      <div class="stack-card-icon">📈</div>
+      <div class="stack-card-label">Herramienta</div>
+      <div class="stack-card-title">Speakle e Informes IA</div>
+      <div class="stack-card-desc">Genera presentaciones e informes de avance automáticamente en 20 minutos.</div>
+      <div class="stack-card-tags">
+        <span class="stack-card-tag">#speakle</span>
+        <span class="stack-card-tag">#presentaciones</span>
+      </div>
+    </a>
 
- <a href="constructora/03_casos_uso_ia.html" style="text-decoration: none; color: inherit;">
- <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.2rem 1.4rem;
- opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
- onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
- onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
- <div style="font-size: 0.65rem; opacity: 0.45; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Casos de uso</div>
- <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">5 Aplicaciones Concretas</div>
- <div style="font-size: 0.82rem; opacity: 0.7; line-height: 1.5;">Defectos, APUs, actas, chatbot documental y planificacion.</div>
- </div>
- </a>
+    <a href="constructora/03_casos_uso_ia.html" class="stack-card constructora">
+      <div class="stack-card-icon">🔍</div>
+      <div class="stack-card-label">Casos de uso</div>
+      <div class="stack-card-title">5 Aplicaciones Concretas</div>
+      <div class="stack-card-desc">Defectos, APUs, actas de comité, chatbot documental y planificación.</div>
+      <div class="stack-card-tags">
+        <span class="stack-card-tag">#casos-uso</span>
+        <span class="stack-card-tag">#apu</span>
+        <span class="stack-card-tag">#recomasys</span>
+      </div>
+    </a>
 
- </div>
+  </div>
 </div>
 
 <!-- ====== EJE ACADEMIA ====== -->
-<div style="margin: 2.5rem 0 0.5rem;">
- <div style="font-size: 0.7rem; opacity: 0.45; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; border-bottom: 1px solid currentColor; padding-bottom: 0.4rem;">
- Academia — Recursos para profundizar
- </div>
- <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+<div class="stack-section">
+  <div class="stack-section-header academia">🎓 Academia — Recursos para profundizar</div>
+  <div class="stack-grid">
 
- <a href="academia/00_intro_academia.html" style="text-decoration: none; color: inherit;">
- <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.2rem 1.4rem;
- opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
- onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
- onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
- <div style="font-size: 0.65rem; opacity: 0.45; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Introduccion</div>
- <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">Recursos Academia</div>
- <div style="font-size: 0.82rem; opacity: 0.7; line-height: 1.5;">Que encontraras en esta seccion y como usarla segun tu perfil.</div>
- </div>
- </a>
+    <a href="academia/00_intro_academia.html" class="stack-card academia">
+      <div class="stack-card-icon">🗺️</div>
+      <div class="stack-card-label">Introducción</div>
+      <div class="stack-card-title">Recursos Academia</div>
+      <div class="stack-card-desc">Qué encontrarás en esta sección y cómo usarla según tu perfil técnico.</div>
+      <div class="stack-card-tags">
+        <span class="stack-card-tag">#academia</span>
+        <span class="stack-card-tag">#recursos</span>
+      </div>
+    </a>
 
- <a href="academia/01_kaggle_colab.html" style="text-decoration: none; color: inherit;">
- <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.2rem 1.4rem;
- opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
- onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
- onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
- <div style="font-size: 0.65rem; opacity: 0.45; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Practica</div>
- <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">Kaggle y Google Colab</div>
- <div style="font-size: 0.82rem; opacity: 0.7; line-height: 1.5;">Ejecuta codigo y experimenta con ML gratis, sin instalar nada.</div>
- </div>
- </a>
+    <a href="academia/01_kaggle_colab.html" class="stack-card academia">
+      <div class="stack-card-icon">🖥️</div>
+      <div class="stack-card-label">Práctica</div>
+      <div class="stack-card-title">Kaggle y Google Colab</div>
+      <div class="stack-card-desc">GPU gratis, notebooks en la nube y datasets de construcción. Sin instalar nada.</div>
+      <div class="stack-card-tags">
+        <span class="stack-card-tag">#kaggle</span>
+        <span class="stack-card-tag">#colab</span>
+        <span class="stack-card-tag">#gpu-gratis</span>
+      </div>
+    </a>
 
- <a href="academia/02_papers_clave.html" style="text-decoration: none; color: inherit;">
- <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.2rem 1.4rem;
- opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
- onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
- onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
- <div style="font-size: 0.65rem; opacity: 0.45; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Investigacion</div>
- <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">Papers Clave AEC + IA</div>
- <div style="font-size: 0.82rem; opacity: 0.7; line-height: 1.5;">8 papers esenciales resumidos en espanol con aplicacion practica.</div>
- </div>
- </a>
+    <a href="academia/02_papers_clave.html" class="stack-card academia">
+      <div class="stack-card-icon">📖</div>
+      <div class="stack-card-label">Investigación</div>
+      <div class="stack-card-title">Papers Clave AEC + IA</div>
+      <div class="stack-card-desc">8 papers esenciales resumidos en español con aplicación práctica en obra.</div>
+      <div class="stack-card-tags">
+        <span class="stack-card-tag">#papers</span>
+        <span class="stack-card-tag">#estado-del-arte</span>
+      </div>
+    </a>
 
- <a href="academia/03_recursos_prompts.html" style="text-decoration: none; color: inherit;">
- <div style="border: 1px solid currentColor; border-radius: 10px; padding: 1.2rem 1.4rem;
- opacity: 0.85; transition: opacity 0.2s, transform 0.2s;"
- onmouseover="this.style.opacity='1'; this.style.transform='translateY(-3px)';"
- onmouseout="this.style.opacity='0.85'; this.style.transform='translateY(0)';">
- <div style="font-size: 0.65rem; opacity: 0.45; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;">Plantillas</div>
- <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">Biblioteca de Prompts</div>
- <div style="font-size: 0.82rem; opacity: 0.7; line-height: 1.5;">12 prompts listos para APUs, actas, informes y normativa NSR-10.</div>
- </div>
- </a>
+    <a href="academia/03_recursos_prompts.html" class="stack-card academia">
+      <div class="stack-card-icon">📝</div>
+      <div class="stack-card-label">Plantillas</div>
+      <div class="stack-card-title">Biblioteca de Prompts</div>
+      <div class="stack-card-desc">12 prompts listos para APUs, actas, informes y consultas NSR-10.</div>
+      <div class="stack-card-tags">
+        <span class="stack-card-tag">#prompts</span>
+        <span class="stack-card-tag">#nsr-10</span>
+        <span class="stack-card-tag">#apu</span>
+      </div>
+    </a>
 
- </div>
+  </div>
 </div>
 ```
 
@@ -316,13 +320,13 @@
  pip install -r requirements.txt
  ```
 
-3. **Abre** cualquier notebook con Jupyter:
+1. **Abre** cualquier notebook con Jupyter:
 
  ```bash
  jupyter notebook
  ```
 
-4. O **lanza directamente en Google Colab** usando el botón en cada página.
+1. O **lanza directamente en Google Colab** usando el botón en cada página.
 
 ---
 

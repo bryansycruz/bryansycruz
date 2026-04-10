@@ -1,7 +1,215 @@
 /* =====================================================
-   Blog-style tag badges
+   STACK-INSPIRED DESIGN SYSTEM
+   Basado en demo.stack.cai.im
    ===================================================== */
 
+/* Google Fonts: Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* =====================================================
+   CSS VARIABLES — Light mode
+   ===================================================== */
+:root {
+  --stack-card-bg:           #ffffff;
+  --stack-card-border:       rgba(0, 0, 0, 0.07);
+  --stack-card-shadow:       0 2px 14px rgba(0, 0, 0, 0.07);
+  --stack-card-shadow-hover: 0 8px 28px rgba(0, 0, 0, 0.13);
+  --stack-card-radius:       16px;
+  --stack-text-primary:      #1a1a2e;
+  --stack-text-secondary:    #6b7280;
+  --stack-text-muted:        #9ca3af;
+  --stack-page-bg:           #f6f6f9;
+
+  /* Axis accent colors */
+  --color-teorico:      #3b82f6;   /* blue */
+  --color-constructora: #f59e0b;   /* amber */
+  --color-academia:     #10b981;   /* emerald */
+  --color-tag:          #8b5cf6;   /* violet */
+}
+
+/* =====================================================
+   CSS VARIABLES — Dark mode (system preference)
+   ===================================================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --stack-card-bg:           #1e1e2e;
+    --stack-card-border:       rgba(255, 255, 255, 0.06);
+    --stack-card-shadow:       0 2px 14px rgba(0, 0, 0, 0.45);
+    --stack-card-shadow-hover: 0 8px 28px rgba(0, 0, 0, 0.65);
+    --stack-text-primary:      #e2e8f0;
+    --stack-text-secondary:    #94a3b8;
+    --stack-text-muted:        #64748b;
+    --stack-page-bg:           #13131f;
+  }
+}
+
+/* Dark mode via JS toggle */
+body.dark-mode {
+  --stack-card-bg:           #1e1e2e;
+  --stack-card-border:       rgba(255, 255, 255, 0.06);
+  --stack-card-shadow:       0 2px 14px rgba(0, 0, 0, 0.45);
+  --stack-card-shadow-hover: 0 8px 28px rgba(0, 0, 0, 0.65);
+  --stack-text-primary:      #e2e8f0;
+  --stack-text-secondary:    #94a3b8;
+  --stack-text-muted:        #64748b;
+  --stack-page-bg:           #13131f;
+}
+
+/* =====================================================
+   TYPOGRAPHY
+   ===================================================== */
+body,
+article.bd-article,
+.bd-article p,
+.bd-article li {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* =====================================================
+   LAYOUT CENTERING — no sidebar
+   ===================================================== */
+.bd-container-inner {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.bd-page-width {
+  max-width: 960px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  flex: 1;
+}
+
+article.bd-article {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* =====================================================
+   STACK — SECTION HEADER
+   ===================================================== */
+.stack-section {
+  margin: 2.8rem 0 0.5rem;
+}
+
+.stack-section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.70rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 2px solid;
+}
+
+.stack-section-header.teorico {
+  color: var(--color-teorico);
+  border-color: var(--color-teorico);
+}
+
+.stack-section-header.constructora {
+  color: var(--color-constructora);
+  border-color: var(--color-constructora);
+}
+
+.stack-section-header.academia {
+  color: var(--color-academia);
+  border-color: var(--color-academia);
+}
+
+/* =====================================================
+   STACK — CARD GRID
+   ===================================================== */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+  gap: 1.1rem;
+}
+
+/* =====================================================
+   STACK — CARD
+   ===================================================== */
+.stack-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--stack-card-bg);
+  border-radius: var(--stack-card-radius);
+  box-shadow: var(--stack-card-shadow);
+  border: 1px solid var(--stack-card-border);
+  border-left: 4px solid transparent;
+  padding: 1.25rem 1.3rem 1rem;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.stack-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--stack-card-shadow-hover);
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.stack-card.teorico      { border-left-color: var(--color-teorico); }
+.stack-card.constructora { border-left-color: var(--color-constructora); }
+.stack-card.academia     { border-left-color: var(--color-academia); }
+
+.stack-card-icon {
+  font-size: 1.9rem;
+  margin-bottom: 0.55rem;
+  line-height: 1;
+}
+
+.stack-card-label {
+  font-size: 0.60rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-bottom: 0.28rem;
+}
+
+.stack-card-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.4rem;
+  color: var(--stack-text-primary);
+}
+
+.stack-card-desc {
+  font-size: 0.81rem;
+  line-height: 1.55;
+  color: var(--stack-text-secondary);
+  flex: 1;
+  margin-bottom: 0.75rem;
+}
+
+.stack-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: auto;
+}
+
+.stack-card-tag {
+  font-size: 0.62rem;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: rgba(100, 100, 100, 0.09);
+  border: 1px solid rgba(100, 100, 100, 0.14);
+  color: var(--stack-text-muted);
+  white-space: nowrap;
+}
+
+/* =====================================================
+   TAG BADGES — page level
+   ===================================================== */
 .tags-container {
   margin: 0.3rem 0 1.4rem 0;
   line-height: 2;
@@ -9,7 +217,7 @@
 
 .tag-badge {
   display: inline-block;
-  background-color: rgba(100, 100, 100, 0.10);
+  background-color: rgba(100, 100, 100, 0.09);
   border: 1px solid rgba(100, 100, 100, 0.18);
   border-radius: 20px;
   padding: 2px 11px;
@@ -30,73 +238,17 @@
 }
 
 /* =====================================================
-   Full-width centered content (no sidebar)
+   ARCHIVE PAGE
    ===================================================== */
-
-/* Collapse the sidebar grid column and center content */
-.bd-container-inner {
-  display: flex !important;
-  flex-direction: row;
-  justify-content: center;
-}
-
-/* Cap and center the main page width */
-.bd-page-width {
-  max-width: 920px !important;
-  width: 100% !important;
-  margin: 0 auto !important;
-  flex: 1;
-}
-
-/* Keep article content comfortably readable */
-article.bd-article {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* =====================================================
-   Back to home floating button
-   ===================================================== */
-
-.home-back-btn {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: rgba(40, 40, 40, 0.82);
-  color: #fff !important;
-  border-radius: 50px;
-  padding: 0.45rem 1.15rem;
-  font-size: 0.80rem;
-  text-decoration: none !important;
-  z-index: 1000;
-  opacity: 0.65;
-  transition: opacity 0.20s, background 0.20s;
-  backdrop-filter: blur(5px);
-  letter-spacing: 0.02em;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-}
-
-.home-back-btn:hover {
-  opacity: 1;
-  background: rgba(40, 40, 40, 0.96);
-  color: #fff !important;
-  text-decoration: none !important;
-}
-
-/* =====================================================
-   Archive and Tags page styles
-   ===================================================== */
-
 .archive-section {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .archive-item {
   display: flex;
   align-items: baseline;
   gap: 0.8rem;
-  padding: 0.35rem 0;
+  padding: 0.48rem 0;
   border-bottom: 1px solid rgba(100, 100, 100, 0.1);
 }
 
@@ -105,32 +257,40 @@ article.bd-article {
 }
 
 .archive-label {
-  font-size: 0.7rem;
-  opacity: 0.45;
-  letter-spacing: 0.07em;
+  font-size: 0.60rem;
+  font-weight: 700;
+  opacity: 0.38;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  min-width: 90px;
+  min-width: 88px;
   flex-shrink: 0;
 }
 
 .archive-title {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   opacity: 0.85;
 }
 
+/* =====================================================
+   TAGS PAGE — card per tag
+   ===================================================== */
 .tag-section {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  background: var(--stack-card-bg);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: var(--stack-card-shadow);
+  border: 1px solid var(--stack-card-border);
 }
 
 .tag-section-header {
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  opacity: 0.55;
-  margin-bottom: 0.6rem;
-  padding-bottom: 0.3rem;
-  border-bottom: 1px solid rgba(100, 100, 100, 0.15);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-tag);
+  margin-bottom: 0.65rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.18);
 }
 
 .tag-links {
@@ -140,22 +300,24 @@ article.bd-article {
 }
 
 .tag-links li {
-  padding: 0.25rem 0;
-  font-size: 0.9rem;
+  padding: 0.22rem 0;
+  font-size: 0.87rem;
 }
 
 .tag-links a {
-  opacity: 0.8;
+  opacity: 0.80;
+  transition: opacity 0.15s;
+  text-decoration: none;
 }
 
 .tag-links a:hover {
   opacity: 1;
+  text-decoration: underline;
 }
 
 /* =====================================================
-   Archivo / Tags pill buttons in navbar
+   NAVBAR PILL BUTTONS — Archivo / Tags
    ===================================================== */
-
 .nav-btn-pill {
   border: 1px solid rgba(120, 120, 120, 0.35) !important;
   border-radius: 50px !important;
@@ -174,18 +336,66 @@ article.bd-article {
 }
 
 /* =====================================================
-   Navbar search field adjustment
+   DARK MODE TOGGLE BUTTON
    ===================================================== */
+#dark-mode-toggle {
+  position: fixed;
+  bottom: 5.5rem;
+  right: 2rem;
+  background: var(--stack-card-bg);
+  border: 1px solid var(--stack-card-border);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: var(--stack-card-shadow);
+  transition: box-shadow 0.2s, transform 0.2s;
+  font-size: 1rem;
+  user-select: none;
+}
 
-.search-button__search-container {
-  max-width: 200px;
+#dark-mode-toggle:hover {
+  box-shadow: var(--stack-card-shadow-hover);
+  transform: scale(1.08);
 }
 
 /* =====================================================
-   Responsive / Mobile fixes
+   BACK TO HOME FLOATING BUTTON
    ===================================================== */
+.home-back-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(30, 30, 46, 0.85);
+  color: #fff !important;
+  border-radius: 50px;
+  padding: 0.45rem 1.15rem;
+  font-size: 0.79rem;
+  text-decoration: none !important;
+  z-index: 1000;
+  opacity: 0.70;
+  transition: opacity 0.20s, background 0.20s, transform 0.20s;
+  backdrop-filter: blur(6px);
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
+  font-family: 'Inter', sans-serif;
+}
 
-/* Full width on small screens */
+.home-back-btn:hover {
+  opacity: 1;
+  background: rgba(30, 30, 46, 0.97);
+  color: #fff !important;
+  text-decoration: none !important;
+  transform: translateY(-2px);
+}
+
+/* =====================================================
+   RESPONSIVE — Mobile (≤ 768px)
+   ===================================================== */
 @media (max-width: 768px) {
   .bd-page-width {
     max-width: 100% !important;
@@ -197,7 +407,10 @@ article.bd-article {
     padding: 0 !important;
   }
 
-  /* Tables: horizontal scroll instead of overflow */
+  .stack-grid {
+    grid-template-columns: 1fr !important;
+  }
+
   table {
     display: block;
     overflow-x: auto;
@@ -205,45 +418,38 @@ article.bd-article {
     font-size: 0.85rem;
   }
 
-  /* Code blocks don't overflow */
   pre {
     overflow-x: auto;
-    font-size: 0.80rem;
+    font-size: 0.79rem;
   }
 
-  /* Pill buttons hide on mobile (they appear in hamburger menu) */
-  .navbar-nav .nav-btn-pill {
-    border-radius: 6px !important;
-    padding: 0.4rem 0.8rem !important;
-    margin: 2px 0 !important;
-    font-size: 0.9rem !important;
+  .home-back-btn {
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.74rem;
+    padding: 0.38rem 0.85rem;
   }
 
-  /* Archive items stack vertically */
+  #dark-mode-toggle {
+    bottom: 4rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+  }
+
   .archive-item {
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 0.18rem;
   }
 
   .archive-label {
     min-width: unset;
   }
-
-  /* Floating home button smaller on mobile */
-  .home-back-btn {
-    bottom: 1rem;
-    right: 1rem;
-    font-size: 0.75rem;
-    padding: 0.4rem 0.9rem;
-  }
-
-  /* Tags grid single column */
-  .tags-grid {
-    grid-template-columns: 1fr !important;
-  }
 }
 
-/* Medium screens */
+/* =====================================================
+   RESPONSIVE — Tablet (≤ 1024px)
+   ===================================================== */
 @media (max-width: 1024px) {
   .bd-page-width {
     max-width: 100% !important;
