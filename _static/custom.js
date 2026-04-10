@@ -35,18 +35,21 @@ document.addEventListener('DOMContentLoaded', function () {
     document.documentElement.classList.remove('dark-mode-pending');
   }
 
+  var SVG_MOON = '<svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  var SVG_SUN  = '<svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+
   var isDark = document.body.classList.contains('dark-mode');
   var btn = document.createElement('div');
   btn.id = 'dark-mode-toggle';
   btn.title = 'Cambiar tema claro / oscuro';
-  btn.textContent = isDark ? '☀️' : '🌙';
+  btn.innerHTML = isDark ? SVG_SUN : SVG_MOON;
   btn.setAttribute('role', 'button');
   btn.setAttribute('aria-label', 'Cambiar tema');
 
   btn.addEventListener('click', function () {
     document.body.classList.toggle('dark-mode');
     var nowDark = document.body.classList.contains('dark-mode');
-    btn.textContent = nowDark ? '☀️' : '🌙';
+    btn.innerHTML = nowDark ? SVG_SUN : SVG_MOON;
     localStorage.setItem('darkMode', nowDark ? 'on' : 'off');
   });
 
@@ -54,43 +57,37 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* -------------------------------------------------------
-   2. Floating Categories / Tags widget (Stack-style)
+   2. Floating Navigation Widget (Stack-style sidebar)
    ------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', function () {
   var root = getSiteRoot();
 
-  var widget = document.createElement('div');
+  var ico = {
+    home:    '<svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+    archive: '<svg viewBox="0 0 24 24"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5" rx="1"/><line x1="10" y1="12" x2="14" y2="12"/></svg>',
+    tag:     '<svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>',
+    book:    '<svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
+    build:   '<svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><line x1="9" y1="7" x2="9.01" y2="7"/><line x1="15" y1="7" x2="15.01" y2="7"/><line x1="9" y1="11" x2="9.01" y2="11"/><line x1="15" y1="11" x2="15.01" y2="11"/><line x1="9" y1="15" x2="9.01" y2="15"/><line x1="15" y1="15" x2="15.01" y2="15"/></svg>',
+    grad:    '<svg viewBox="0 0 24 24"><path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>'
+  };
+
+  function item(href, cls, icon, label) {
+    return '<a href="' + href + '" class="ssw-item' + (cls ? ' ' + cls : '') + '">' +
+             icon + '<span>' + label + '</span>' +
+           '</a>';
+  }
+
+  var widget = document.createElement('nav');
   widget.id = 'stack-widget';
+  widget.setAttribute('aria-label', 'Navegación principal');
   widget.innerHTML =
-    '<div class="ssw-section">' +
-      '<div class="ssw-header">' +
-        '<span class="ssw-icon">#</span>' +
-        '<span class="ssw-label">Categorías</span>' +
-      '</div>' +
-      '<div class="ssw-pills">' +
-        '<a href="' + root + 'archive.html" class="ssw-pill">Archivo</a>' +
-        '<a href="' + root + 'ml/01_que_es_ml.html" class="ssw-pill teorico">Teórico</a>' +
-        '<a href="' + root + 'constructora/00_intro_constructora.html" class="ssw-pill constructora">Constructora</a>' +
-        '<a href="' + root + 'academia/00_intro_academia.html" class="ssw-pill academia">Academia</a>' +
-      '</div>' +
-    '</div>' +
-    '<div class="ssw-section">' +
-      '<div class="ssw-header">' +
-        '<span class="ssw-icon">🏷️</span>' +
-        '<span class="ssw-label">Tags</span>' +
-      '</div>' +
-      '<div class="ssw-pills">' +
-        '<a href="' + root + 'tags.html" class="ssw-pill">#ml</a>' +
-        '<a href="' + root + 'tags.html" class="ssw-pill">#llm</a>' +
-        '<a href="' + root + 'tags.html" class="ssw-pill">#rag</a>' +
-        '<a href="' + root + 'tags.html" class="ssw-pill">#deep-learning</a>' +
-        '<a href="' + root + 'tags.html" class="ssw-pill">#construccion</a>' +
-        '<a href="' + root + 'tags.html" class="ssw-pill">#apu</a>' +
-        '<a href="' + root + 'tags.html" class="ssw-pill">#python</a>' +
-        '<a href="' + root + 'tags.html" class="ssw-pill">#prompts</a>' +
-        '<a href="' + root + 'tags.html" class="ssw-pill">#papers</a>' +
-      '</div>' +
-    '</div>';
+    item(root + 'intro.html',                           '',                ico.home,    'Inicio')       +
+    item(root + 'archive.html',                         '',                ico.archive, 'Archivo')      +
+    item(root + 'tags.html',                            '',                ico.tag,     'Tags')         +
+    '<hr class="ssw-sep">'                                                                              +
+    item(root + 'ml/01_que_es_ml.html',                 'ssw-teorico',     ico.book,    'Teórico')      +
+    item(root + 'constructora/00_intro_constructora.html','ssw-constructora',ico.build,  'Constructora') +
+    item(root + 'academia/00_intro_academia.html',      'ssw-academia',    ico.grad,    'Academia');
 
   document.body.appendChild(widget);
 });
