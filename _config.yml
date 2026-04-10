@@ -32,8 +32,6 @@ sphinx:
     language: es
     html_static_path:
       - _static
-    templates_path:
-      - _templates
     html_css_files:
       - custom.css
     html_js_files:
@@ -44,7 +42,6 @@ sphinx:
       navigation_with_keys: true
       navbar_end:
         - search-field.html
-        - navbar-links.html
         - navbar-icon-links.html
       secondary_sidebar_items: []
       use_download_button: false
