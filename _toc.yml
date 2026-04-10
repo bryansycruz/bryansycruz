@@ -42,14 +42,6 @@ parts:
       - file: academia/02_papers_clave
       - file: academia/03_recursos_prompts
 
-  - caption: "Archivo"
-    chapters:
-      - file: archive
-
-  - caption: "Tags"
-    chapters:
-      - file: tags
-
   - caption: "Legal"
     chapters:
       - file: aviso_legal

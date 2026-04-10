@@ -153,9 +153,103 @@ article.bd-article {
 }
 
 /* =====================================================
+   Archivo / Tags pill buttons in navbar
+   ===================================================== */
+
+.nav-btn-pill {
+  border: 1px solid rgba(120, 120, 120, 0.35) !important;
+  border-radius: 50px !important;
+  padding: 0.22rem 0.9rem !important;
+  font-size: 0.82rem !important;
+  line-height: 1.4 !important;
+  margin: 0 2px !important;
+  transition: background 0.18s, border-color 0.18s !important;
+  white-space: nowrap;
+}
+
+.nav-btn-pill:hover {
+  background: rgba(120, 120, 120, 0.14) !important;
+  border-color: rgba(120, 120, 120, 0.55) !important;
+  text-decoration: none !important;
+}
+
+/* =====================================================
    Navbar search field adjustment
    ===================================================== */
 
 .search-button__search-container {
   max-width: 200px;
+}
+
+/* =====================================================
+   Responsive / Mobile fixes
+   ===================================================== */
+
+/* Full width on small screens */
+@media (max-width: 768px) {
+  .bd-page-width {
+    max-width: 100% !important;
+    padding: 0 0.75rem !important;
+  }
+
+  article.bd-article {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Tables: horizontal scroll instead of overflow */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.85rem;
+  }
+
+  /* Code blocks don't overflow */
+  pre {
+    overflow-x: auto;
+    font-size: 0.80rem;
+  }
+
+  /* Pill buttons hide on mobile (they appear in hamburger menu) */
+  .navbar-nav .nav-btn-pill {
+    border-radius: 6px !important;
+    padding: 0.4rem 0.8rem !important;
+    margin: 2px 0 !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* Archive items stack vertically */
+  .archive-item {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .archive-label {
+    min-width: unset;
+  }
+
+  /* Floating home button smaller on mobile */
+  .home-back-btn {
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.9rem;
+  }
+
+  /* Tags grid single column */
+  .tags-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 1024px) {
+  .bd-page-width {
+    max-width: 100% !important;
+  }
+
+  article.bd-article {
+    max-width: 100% !important;
+  }
 }
