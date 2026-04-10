@@ -30,14 +30,58 @@
 }
 
 /* =====================================================
-   Full-width content when sidebar is removed
+   Full-width centered content (no sidebar)
    ===================================================== */
 
-/* Widen the content area now that there is no left sidebar */
-.bd-content {
+/* Collapse the sidebar grid column and center content */
+.bd-container-inner {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* Cap and center the main page width */
+.bd-page-width {
+  max-width: 920px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  flex: 1;
+}
+
+/* Keep article content comfortably readable */
+article.bd-article {
   max-width: 860px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* =====================================================
+   Back to home floating button
+   ===================================================== */
+
+.home-back-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(40, 40, 40, 0.82);
+  color: #fff !important;
+  border-radius: 50px;
+  padding: 0.45rem 1.15rem;
+  font-size: 0.80rem;
+  text-decoration: none !important;
+  z-index: 1000;
+  opacity: 0.65;
+  transition: opacity 0.20s, background 0.20s;
+  backdrop-filter: blur(5px);
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.home-back-btn:hover {
+  opacity: 1;
+  background: rgba(40, 40, 40, 0.96);
+  color: #fff !important;
+  text-decoration: none !important;
 }
 
 /* =====================================================
