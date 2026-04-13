@@ -9,6 +9,31 @@ function resolveAbsUrl(rel) {
   return a.href;
 }
 
+/**
+ * Find the absolute href of a nav/sidebar link whose href
+ * contains `pattern`. Returns null if not found.
+ * Uses only Sphinx-rendered links (no root calculation).
+ */
+function findNavHref(pattern) {
+  var selectors = [
+    '.bd-sidebar-primary a',
+    '.bd-sidenav a',
+    '#bd-docs-nav a',
+    '.navbar-nav a',
+    'nav a'
+  ];
+  for (var s = 0; s < selectors.length; s++) {
+    var links = document.querySelectorAll(selectors[s]);
+    for (var i = 0; i < links.length; i++) {
+      var href = links[i].getAttribute('href');
+      if (href && href.indexOf(pattern) !== -1) {
+        return links[i].href; /* browser-resolved absolute URL */
+      }
+    }
+  }
+  return null;
+}
+
 /* -------------------------------------------------------
    1. Dark mode toggle (persists in localStorage)
    ------------------------------------------------------- */
@@ -97,27 +122,90 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* -------------------------------------------------------
-   4. Convert TOC navbar dropdowns to direct pill-button links.
+   4. Floating Navigation Widget (quick-jump panel)
+      Links are read from Sphinx-rendered sidebar/navbar
+      — no dynamic root calculation, no 404 risk.
+      Visible only on screens >= 1500px (right of content).
+   ------------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', function () {
+
+  var ico = {
+    home:    '<svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+    archive: '<svg viewBox="0 0 24 24"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5" rx="1"/><line x1="10" y1="12" x2="14" y2="12"/></svg>',
+    tag:     '<svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>',
+    book:    '<svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
+    build:   '<svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><line x1="9" y1="7" x2="9.01" y2="7"/><line x1="15" y1="7" x2="15.01" y2="7"/><line x1="9" y1="11" x2="9.01" y2="11"/><line x1="15" y1="11" x2="15.01" y2="11"/><line x1="9" y1="15" x2="9.01" y2="15"/><line x1="15" y1="15" x2="15.01" y2="15"/></svg>',
+    grad:    '<svg viewBox="0 0 24 24"><path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>'
+  };
+
+  function makeItem(href, cls, icon, label) {
+    if (!href) return '';
+    var a = document.createElement('a');
+    a.href = href;
+    a.className = 'ssw-item' + (cls ? ' ' + cls : '');
+    a.innerHTML = icon + '<span>' + label + '</span>';
+    return a;
+  }
+
+  /* Read links from Sphinx-rendered sidebar/navbar (always correct paths) */
+  var brand = document.querySelector('.navbar-brand, .navbar-brand-link');
+  var homeHref  = brand ? brand.href : findNavHref('intro.html');
+  var archHref  = findNavHref('archive.html');
+  var tagsHref  = findNavHref('tags.html');
+  var teorHref  = findNavHref('01_que_es_ml.html');
+  var consHref  = findNavHref('00_intro_constructora.html');
+  var acadHref  = findNavHref('00_intro_academia.html');
+
+  /* Build widget only if at least the home link is available */
+  if (!homeHref && !archHref && !tagsHref) return;
+
+  var widget = document.createElement('nav');
+  widget.id = 'stack-widget';
+  widget.setAttribute('aria-label', 'Navegacion rapida');
+
+  var items = [
+    makeItem(homeHref, '',               ico.home,    'Inicio'),
+    makeItem(archHref, '',               ico.archive, 'Archivo'),
+    makeItem(tagsHref, '',               ico.tag,     'Tags')
+  ];
+
+  /* Add section separator and theme links if available */
+  var hasThemes = teorHref || consHref || acadHref;
+  if (hasThemes) {
+    var sep = document.createElement('hr');
+    sep.className = 'ssw-sep';
+    items.push(sep);
+    if (teorHref) items.push(makeItem(teorHref, 'ssw-teorico',      ico.book,  'Teorico'));
+    if (consHref) items.push(makeItem(consHref, 'ssw-constructora', ico.build, 'Constructora'));
+    if (acadHref) items.push(makeItem(acadHref, 'ssw-academia',     ico.grad,  'Academia'));
+  }
+
+  items.forEach(function (el) {
+    if (el) widget.appendChild(el);
+  });
+
+  document.body.appendChild(widget);
+});
+
+/* -------------------------------------------------------
+   5. Convert TOC navbar dropdowns to direct pill-button links.
       Also injects an "Inicio" pill using the brand link.
-      Uses Sphinx-generated hrefs (server-rendered) — no
-      dynamic root detection needed.
    ------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', function () {
   var navbarNav = document.querySelector('.navbar-nav, .bd-navbar-elements');
   if (!navbarNav) return;
 
-  /* --- Inicio pill (reads brand link rendered by Sphinx) --- */
+  /* Inicio pill — reads brand href rendered by Sphinx */
   var brand = document.querySelector('.navbar-brand, .navbar-brand-link');
   if (brand && brand.getAttribute('href')) {
-    var homeHref = brand.getAttribute('href');
     var inicioPill = document.createElement('a');
-    inicioPill.href = homeHref;
+    inicioPill.href = brand.getAttribute('href');
     inicioPill.className = 'nav-link nav-btn-pill';
     inicioPill.textContent = 'Inicio';
     navbarNav.insertBefore(inicioPill, navbarNav.firstChild);
   }
 
-  /* --- Archivo and Tags: convert TOC dropdowns to pills --- */
+  /* Archivo / Tags — convert TOC dropdown items to pills */
   var dropdowns = document.querySelectorAll('.navbar-nav .nav-item.dropdown');
   dropdowns.forEach(function (item) {
     var toggler = item.querySelector('.nav-link.dropdown-toggle');
@@ -125,7 +213,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var text = toggler.textContent.trim();
     if (text !== 'Archivo' && text !== 'Tags') return;
 
-    /* Use the first real link inside the dropdown (Sphinx-generated URL) */
     var innerLink = item.querySelector('.dropdown-menu a');
     if (!innerLink) return;
     var href = innerLink.getAttribute('href');

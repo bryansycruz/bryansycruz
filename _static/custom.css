@@ -315,6 +315,79 @@ article.bd-article {
 }
 
 /* =====================================================
+   FLOATING NAVIGATION WIDGET (quick-jump panel)
+   Positioned to the RIGHT of content on wide screens.
+   ===================================================== */
+#stack-widget {
+  position: fixed;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 180px;
+  background: var(--stack-card-bg);
+  border: 1px solid var(--stack-card-border);
+  border-radius: 16px;
+  box-shadow: var(--stack-card-shadow);
+  padding: 0.45rem 0;
+  z-index: 200;
+  display: none;
+  overflow: hidden;
+}
+
+/* Show widget only when there is enough space to the right of content */
+@media (min-width: 1500px) {
+  #stack-widget { display: block; }
+}
+
+.ssw-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.62rem 1.1rem;
+  text-decoration: none !important;
+  color: var(--stack-text-primary) !important;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.15s;
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+.ssw-item:hover {
+  background: rgba(100, 100, 100, 0.09);
+  text-decoration: none !important;
+}
+
+.ssw-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.55;
+  transition: opacity 0.15s;
+}
+
+.ssw-item:hover svg { opacity: 0.9; }
+
+.ssw-teorico      { color: var(--color-teorico)      !important; }
+.ssw-constructora { color: var(--color-constructora) !important; }
+.ssw-academia     { color: var(--color-academia)     !important; }
+
+.ssw-teorico svg,
+.ssw-constructora svg,
+.ssw-academia svg { opacity: 0.85; }
+
+.ssw-sep {
+  border: none;
+  border-top: 1px solid var(--stack-card-border);
+  margin: 0.35rem 1rem;
+}
+
+/* =====================================================
    NAVBAR PILL BUTTONS — Inicio / Archivo / Tags
    ===================================================== */
 .nav-btn-pill {
