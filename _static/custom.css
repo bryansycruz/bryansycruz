@@ -1,6 +1,5 @@
 /* =====================================================
    STACK-INSPIRED DESIGN SYSTEM
-   Basado en demo.stack.cai.im
    ===================================================== */
 
 /* Google Fonts: Inter */
@@ -66,24 +65,10 @@ article.bd-article,
 }
 
 /* =====================================================
-   LAYOUT CENTERING — no sidebar
+   LAYOUT — content max-width
    ===================================================== */
-.bd-container-inner {
-  display: flex !important;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.bd-page-width {
-  max-width: 960px !important;
-  width: 100% !important;
-  margin: 0 auto !important;
-  flex: 1;
-}
-
 article.bd-article {
   max-width: 900px;
-  margin: 0 auto;
   padding: 0 1rem;
 }
 
@@ -158,12 +143,6 @@ article.bd-article {
 .stack-card.teorico      { border-left-color: var(--color-teorico); }
 .stack-card.constructora { border-left-color: var(--color-constructora); }
 .stack-card.academia     { border-left-color: var(--color-academia); }
-
-.stack-card-icon {
-  font-size: 1.9rem;
-  margin-bottom: 0.55rem;
-  line-height: 1;
-}
 
 .stack-card-label {
   font-size: 0.60rem;
@@ -316,7 +295,27 @@ article.bd-article {
 }
 
 /* =====================================================
-   NAVBAR PILL BUTTONS — Archivo / Tags
+   SOCIAL ICON LINKS (intro page)
+   ===================================================== */
+.social-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  transition: opacity 0.2s, transform 0.2s;
+  text-decoration: none;
+  color: currentColor;
+}
+
+.social-icon-link:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
+  text-decoration: none;
+  color: currentColor;
+}
+
+/* =====================================================
+   NAVBAR PILL BUTTONS — Inicio / Archivo / Tags
    ===================================================== */
 .nav-btn-pill {
   border: 1px solid rgba(120, 120, 120, 0.35) !important;
@@ -333,77 +332,6 @@ article.bd-article {
   background: rgba(120, 120, 120, 0.14) !important;
   border-color: rgba(120, 120, 120, 0.55) !important;
   text-decoration: none !important;
-}
-
-/* =====================================================
-   FLOATING NAVIGATION WIDGET  (Stack-style sidebar)
-   ===================================================== */
-#stack-widget {
-  position: fixed;
-  left: max(1rem, calc(50% - 480px - 204px));
-  top: 50%;
-  transform: translateY(-50%);
-  width: 196px;
-  background: var(--stack-card-bg);
-  border: 1px solid var(--stack-card-border);
-  border-radius: 16px;
-  box-shadow: var(--stack-card-shadow);
-  padding: 0.45rem 0;
-  z-index: 200;
-  display: none;
-  overflow: hidden;
-}
-
-@media (min-width: 1390px) {
-  #stack-widget { display: block; }
-}
-
-.ssw-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.62rem 1.1rem;
-  text-decoration: none !important;
-  color: var(--stack-text-primary) !important;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: background 0.15s;
-  cursor: pointer;
-  line-height: 1.2;
-}
-
-.ssw-item:hover {
-  background: rgba(100, 100, 100, 0.09);
-  text-decoration: none !important;
-}
-
-.ssw-item svg {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  opacity: 0.55;
-  transition: opacity 0.15s;
-}
-
-.ssw-item:hover svg { opacity: 0.9; }
-
-.ssw-teorico      { color: var(--color-teorico)      !important; }
-.ssw-constructora { color: var(--color-constructora) !important; }
-.ssw-academia     { color: var(--color-academia)     !important; }
-
-.ssw-teorico svg,
-.ssw-constructora svg,
-.ssw-academia svg { opacity: 0.85; }
-
-.ssw-sep {
-  border: none;
-  border-top: 1px solid var(--stack-card-border);
-  margin: 0.35rem 1rem;
 }
 
 /* =====================================================
@@ -500,14 +428,9 @@ article.bd-article {
 }
 
 /* =====================================================
-   RESPONSIVE — Mobile (≤ 768px)
+   RESPONSIVE — Mobile (<=768px)
    ===================================================== */
 @media (max-width: 768px) {
-  .bd-page-width {
-    max-width: 100% !important;
-    padding: 0 0.75rem !important;
-  }
-
   article.bd-article {
     max-width: 100% !important;
     padding: 0 !important;
@@ -550,11 +473,6 @@ article.bd-article {
     height: 36px;
   }
 
-  /* Widget is hidden on mobile (no space) */
-  #stack-widget {
-    display: none !important;
-  }
-
   .archive-item {
     flex-direction: column;
     gap: 0.18rem;
@@ -562,18 +480,5 @@ article.bd-article {
 
   .archive-label {
     min-width: unset;
-  }
-}
-
-/* =====================================================
-   RESPONSIVE — Tablet (≤ 1024px)
-   ===================================================== */
-@media (max-width: 1024px) {
-  .bd-page-width {
-    max-width: 100% !important;
-  }
-
-  article.bd-article {
-    max-width: 100% !important;
   }
 }

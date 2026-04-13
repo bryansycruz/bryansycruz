@@ -9,15 +9,6 @@ function resolveAbsUrl(rel) {
   return a.href;
 }
 
-/** Return the site root path (ends with '/') */
-function getSiteRoot() {
-  var brand = document.querySelector('.navbar-brand, .navbar-brand-link');
-  if (!brand) return '/';
-  var abs = resolveAbsUrl(brand.getAttribute('href'));
-  // brand points to intro.html — strip filename to get root
-  return abs.replace(/[^/]+\.html(\?.*)?$/, '').replace(/\/?$/, '/');
-}
-
 /* -------------------------------------------------------
    1. Dark mode toggle (persists in localStorage)
    ------------------------------------------------------- */
@@ -57,51 +48,15 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* -------------------------------------------------------
-   2. Floating Navigation Widget (Stack-style sidebar)
-   ------------------------------------------------------- */
-document.addEventListener('DOMContentLoaded', function () {
-  var root = getSiteRoot();
-
-  var ico = {
-    home:    '<svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
-    archive: '<svg viewBox="0 0 24 24"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5" rx="1"/><line x1="10" y1="12" x2="14" y2="12"/></svg>',
-    tag:     '<svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>',
-    book:    '<svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
-    build:   '<svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><line x1="9" y1="7" x2="9.01" y2="7"/><line x1="15" y1="7" x2="15.01" y2="7"/><line x1="9" y1="11" x2="9.01" y2="11"/><line x1="15" y1="11" x2="15.01" y2="11"/><line x1="9" y1="15" x2="9.01" y2="15"/><line x1="15" y1="15" x2="15.01" y2="15"/></svg>',
-    grad:    '<svg viewBox="0 0 24 24"><path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>'
-  };
-
-  function item(href, cls, icon, label) {
-    return '<a href="' + href + '" class="ssw-item' + (cls ? ' ' + cls : '') + '">' +
-             icon + '<span>' + label + '</span>' +
-           '</a>';
-  }
-
-  var widget = document.createElement('nav');
-  widget.id = 'stack-widget';
-  widget.setAttribute('aria-label', 'Navegación principal');
-  widget.innerHTML =
-    item(root + 'intro.html',                           '',                ico.home,    'Inicio')       +
-    item(root + 'archive.html',                         '',                ico.archive, 'Archivo')      +
-    item(root + 'tags.html',                            '',                ico.tag,     'Tags')         +
-    '<hr class="ssw-sep">'                                                                              +
-    item(root + 'ml/01_que_es_ml.html',                 'ssw-teorico',     ico.book,    'Teórico')      +
-    item(root + 'constructora/00_intro_constructora.html','ssw-constructora',ico.build,  'Constructora') +
-    item(root + 'academia/00_intro_academia.html',      'ssw-academia',    ico.grad,    'Academia');
-
-  document.body.appendChild(widget);
-});
-
-/* -------------------------------------------------------
-   3. Scroll-to-top button (appears after 280px scroll)
+   2. Scroll-to-top button (appears after 280px scroll)
    ------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', function () {
   var topBtn = document.createElement('div');
   topBtn.id = 'scroll-top-btn';
-  topBtn.innerHTML = '↑';
-  topBtn.title = 'Volver al inicio de esta página';
+  topBtn.innerHTML = '&#8679;';
+  topBtn.title = 'Volver al inicio de esta pagina';
   topBtn.setAttribute('role', 'button');
-  topBtn.setAttribute('aria-label', 'Ir al inicio de la página');
+  topBtn.setAttribute('aria-label', 'Ir al inicio de la pagina');
 
   topBtn.addEventListener('click', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -119,31 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* -------------------------------------------------------
-   4. Convert "Archivo" and "Tags" navbar dropdowns
-      into direct pill-button links.
-   ------------------------------------------------------- */
-document.addEventListener('DOMContentLoaded', function () {
-  var navItems = document.querySelectorAll('.navbar-nav .nav-item.dropdown');
-  navItems.forEach(function (item) {
-    var toggler = item.querySelector('.nav-link.dropdown-toggle');
-    if (!toggler) return;
-    var text = toggler.textContent.trim();
-    if (text !== 'Archivo' && text !== 'Tags') return;
-
-    var innerLink = item.querySelector('.dropdown-menu a.nav-link');
-    if (!innerLink) return;
-    var href = innerLink.getAttribute('href');
-
-    var pill = document.createElement('a');
-    pill.href = href;
-    pill.className = 'nav-link nav-btn-pill';
-    pill.textContent = text;
-    item.parentNode.replaceChild(pill, item);
-  });
-});
-
-/* -------------------------------------------------------
-   5. Floating "← Inicio" button on inner pages.
+   3. Floating back-to-home button on inner pages.
    ------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', function () {
   var brand = document.querySelector('.navbar-brand, .navbar-brand-link');
@@ -160,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var btn = document.createElement('a');
   btn.href = homeUrl;
   btn.className = 'home-back-btn';
-  btn.innerHTML = '&#8592; Inicio';
+  btn.textContent = '\u2190 Inicio';
   btn.setAttribute('aria-label', 'Volver al inicio');
   document.body.appendChild(btn);
 });
