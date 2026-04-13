@@ -123,9 +123,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /* -------------------------------------------------------
    4. Floating Navigation Widget (quick-jump panel)
-      Links are read from Sphinx-rendered sidebar/navbar
-      — no dynamic root calculation, no 404 risk.
-      Visible only on screens >= 1500px (right of content).
+      Primary: reads links already rendered by Sphinx in
+      sidebar/navbar (no 404 risk).
+      Fallback: computes URLs from the brand link's root
+      (same approach that worked in earlier versions).
+      Visible on screens >= 1390px, on the right of content.
    ------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -139,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   function makeItem(href, cls, icon, label) {
-    if (!href) return '';
+    if (!href) return null;
     var a = document.createElement('a');
     a.href = href;
     a.className = 'ssw-item' + (cls ? ' ' + cls : '');
@@ -147,18 +149,33 @@ document.addEventListener('DOMContentLoaded', function () {
     return a;
   }
 
-  /* Read links from Sphinx-rendered sidebar/navbar (always correct paths) */
-  var brand = document.querySelector('.navbar-brand, .navbar-brand-link');
-  var homeHref  = brand ? brand.href : findNavHref('intro.html');
-  var archHref  = findNavHref('archive.html');
-  var tagsHref  = findNavHref('tags.html');
-  var teorHref  = findNavHref('01_que_es_ml.html');
-  var consHref  = findNavHref('00_intro_constructora.html');
-  var acadHref  = findNavHref('00_intro_academia.html');
+  /* --- Step 1: try sidebar / navbar links (Sphinx-generated, always correct) --- */
+  var brand    = document.querySelector('.navbar-brand, .navbar-brand-link');
+  var homeHref = brand ? brand.href : findNavHref('intro.html');
+  var archHref = findNavHref('archive.html');
+  var tagsHref = findNavHref('tags.html');
+  var teorHref = findNavHref('01_que_es_ml.html');
+  var consHref = findNavHref('00_intro_constructora.html');
+  var acadHref = findNavHref('00_intro_academia.html');
 
-  /* Build widget only if at least the home link is available */
-  if (!homeHref && !archHref && !tagsHref) return;
+  /* --- Step 2: fallback — derive root from brand href and build absolute URLs --- */
+  if (homeHref && (!archHref || !tagsHref || !teorHref || !consHref || !acadHref)) {
+    /* Strip the filename to get the site root
+       e.g.  https://byama.github.io/Bryansycruz/intro.html
+             → https://byama.github.io/Bryansycruz/            */
+    var root = homeHref.replace(/[^/]+\.html[^/]*$/, '');
+    if (root) {
+      archHref = archHref || root + 'archive.html';
+      tagsHref = tagsHref || root + 'tags.html';
+      teorHref = teorHref || root + 'ml/01_que_es_ml.html';
+      consHref = consHref || root + 'constructora/00_intro_constructora.html';
+      acadHref = acadHref || root + 'academia/00_intro_academia.html';
+    }
+  }
 
+  if (!homeHref) return; /* nothing to build */
+
+  /* --- Build the widget --- */
   var widget = document.createElement('nav');
   widget.id = 'stack-widget';
   widget.setAttribute('aria-label', 'Navegacion rapida');
@@ -169,16 +186,12 @@ document.addEventListener('DOMContentLoaded', function () {
     makeItem(tagsHref, '',               ico.tag,     'Tags')
   ];
 
-  /* Add section separator and theme links if available */
-  var hasThemes = teorHref || consHref || acadHref;
-  if (hasThemes) {
-    var sep = document.createElement('hr');
-    sep.className = 'ssw-sep';
-    items.push(sep);
-    if (teorHref) items.push(makeItem(teorHref, 'ssw-teorico',      ico.book,  'Teorico'));
-    if (consHref) items.push(makeItem(consHref, 'ssw-constructora', ico.build, 'Constructora'));
-    if (acadHref) items.push(makeItem(acadHref, 'ssw-academia',     ico.grad,  'Academia'));
-  }
+  var sep = document.createElement('hr');
+  sep.className = 'ssw-sep';
+  items.push(sep);
+  items.push(makeItem(teorHref, 'ssw-teorico',      ico.book,  'Teorico'));
+  items.push(makeItem(consHref, 'ssw-constructora', ico.build, 'Constructora'));
+  items.push(makeItem(acadHref, 'ssw-academia',     ico.grad,  'Academia'));
 
   items.forEach(function (el) {
     if (el) widget.appendChild(el);

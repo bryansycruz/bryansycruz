@@ -335,7 +335,7 @@ article.bd-article {
 }
 
 /* Show widget only when there is enough space to the right of content */
-@media (min-width: 1500px) {
+@media (min-width: 1390px) {
   #stack-widget { display: block; }
 }
 
