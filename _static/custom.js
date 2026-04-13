@@ -95,3 +95,46 @@ document.addEventListener('DOMContentLoaded', function () {
   btn.setAttribute('aria-label', 'Volver al inicio');
   document.body.appendChild(btn);
 });
+
+/* -------------------------------------------------------
+   4. Convert TOC navbar dropdowns to direct pill-button links.
+      Also injects an "Inicio" pill using the brand link.
+      Uses Sphinx-generated hrefs (server-rendered) — no
+      dynamic root detection needed.
+   ------------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', function () {
+  var navbarNav = document.querySelector('.navbar-nav, .bd-navbar-elements');
+  if (!navbarNav) return;
+
+  /* --- Inicio pill (reads brand link rendered by Sphinx) --- */
+  var brand = document.querySelector('.navbar-brand, .navbar-brand-link');
+  if (brand && brand.getAttribute('href')) {
+    var homeHref = brand.getAttribute('href');
+    var inicioPill = document.createElement('a');
+    inicioPill.href = homeHref;
+    inicioPill.className = 'nav-link nav-btn-pill';
+    inicioPill.textContent = 'Inicio';
+    navbarNav.insertBefore(inicioPill, navbarNav.firstChild);
+  }
+
+  /* --- Archivo and Tags: convert TOC dropdowns to pills --- */
+  var dropdowns = document.querySelectorAll('.navbar-nav .nav-item.dropdown');
+  dropdowns.forEach(function (item) {
+    var toggler = item.querySelector('.nav-link.dropdown-toggle');
+    if (!toggler) return;
+    var text = toggler.textContent.trim();
+    if (text !== 'Archivo' && text !== 'Tags') return;
+
+    /* Use the first real link inside the dropdown (Sphinx-generated URL) */
+    var innerLink = item.querySelector('.dropdown-menu a');
+    if (!innerLink) return;
+    var href = innerLink.getAttribute('href');
+    if (!href) return;
+
+    var pill = document.createElement('a');
+    pill.href = href;
+    pill.className = 'nav-link nav-btn-pill';
+    pill.textContent = text;
+    item.parentNode.replaceChild(pill, item);
+  });
+});

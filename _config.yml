@@ -41,8 +41,6 @@ sphinx:
         - sidebar-nav-bs.html
     html_theme_options:
       navigation_with_keys: true
-      navbar_center:
-        - navbar-links.html
       navbar_end:
         - search-field.html
         - navbar-icon-links.html
