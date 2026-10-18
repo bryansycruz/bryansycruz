@@ -1,7 +1,5 @@
 # AI + Nube + Construcción
 
-![Banner Principal](image_1.png)
-
 Portal de documentación técnica y recurso educativo orientado a la digitalización del sector de la construcción (AEC) en Colombia e Hispanoamérica mediante **Inteligencia Artificial**, **Machine Learning** y servicios en la nube (**GCP / AWS**).
 
 **Acceso al portal interactivo:** [bryansycruz.github.io/bryansycruz/intro.html](https://bryansycruz.github.io/bryansycruz/intro.html)
@@ -11,8 +9,6 @@ Portal de documentación técnica y recurso educativo orientado a la digitalizac
 ## Estructura del Contenido
 
 ### 1. Eje Teórico (10 Módulos)
-
-![Eje Teórico y Algoritmos](image_2.png)
 
 * **Módulo 1: Machine Learning:** Tipos de aprendizaje, algoritmos clave, pipeline completo y librerías esenciales (Scikit-Learn).
 * **Módulo 2: Deep Learning:** Redes neuronales, CNNs para detección de defectos en obra y Transfer Learning.
@@ -28,8 +24,6 @@ Portal de documentación técnica y recurso educativo orientado a la digitalizac
 ---
 
 ### 2. Constructora (Herramientas y Casos Sin Código)
-
-![IA en Empresa y Constructora](image_3.png)
 
 * **IA para tu Empresa:** Generación de valor y Retorno de Inversión (ROI) en el sector AEC sin necesidad de programar.
 * **PowerBI para Obra:** Control de gestión con 5 dashboards clave (avance, costos, proveedores, calidad y flujo de caja).
